@@ -152,6 +152,7 @@
                     console.log(data);
                     let resultados = $.parseJSON(data);
                     $('#tablaPersona').html(resultados);
+                    $('#buscador').val() = '';
                 })
             })
         });

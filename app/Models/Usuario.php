@@ -16,12 +16,22 @@ class Usuario extends Model{
     }
 
     public function buscarNombreDeusuario($nombre,$password){
-        $tabla = $this->db->table('usuario');
-        $confirmacionUsuario = array('username'=>$nombre,'password'=>$password);
-        $tabla->where($confirmacionUsuario);
-        $resultadoDeBusqueda = $tabla->get();
-        return $resultadoDeBusqueda->getRow();
+        if($this->confirmarPassword($nombre,$password)){
+            $tabla = $this->db->table('usuario');
+            $tabla->where('username',$nombre);
+            $resultadoDeBusqueda = $tabla->get();
+            return $resultadoDeBusqueda->getRow();
+        }else{
+            return false;
+        }
     }
 
-
+    public function confirmarPassword($usuario,$password){
+        $tabla = $this->db->table('usuario');
+        $tabla->select('password');
+        $tabla->where('username',$usuario);
+        $resultado = $tabla->get()->getRow();
+        $desencriptar = password_verify($password,$resultado->password);
+        return $desencriptar;
+    }
 }
