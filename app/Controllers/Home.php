@@ -17,7 +17,8 @@ class Home extends BaseController
     {
         $sessionIniciada = $this->session->get('usuario');
         if($sessionIniciada){
-            return view('vistas/inicio');;
+            $templates = ['header'=>view('vistas/templates/header'),'footer'=>view('vistas/templates/footer')];
+            return view('vistas/inicio',$templates);
         }else{
             return view('login');
         }
@@ -31,7 +32,8 @@ class Home extends BaseController
         if($informacionUsuario){
             $informacionDeSession = array('id'=>$informacionUsuario->id_usuario,'usuario'=>$informacionUsuario->username);
             $this->session->set($informacionDeSession);
-            return view('vistas/inicio');
+            $templates = ['header'=>view('vistas/templates/header'),'footer'=>view('vistas/templates/footer')];
+            return view('vistas/inicio',$templates);
         }else{
             return view('login');
         }
