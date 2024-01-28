@@ -24,7 +24,7 @@
                             name=""
                             id=""
                             class="btn btn-primary w-100"
-                            href="#"
+                            href="<?=base_url('/')?>"
                             role="button"
                             ><i class="fa-solid fa-gauge pe-2"></i>Dashboard</a
                         >
@@ -85,5 +85,8 @@
         </div>
     </div>
 </div>
-<div class="row bg-light" style="height:100vh;width:80%">
+<div class="row bg-light align-content-between" style="height:100vh;width:80%">
+    <div class="col-12 bg-primary" style="height:10%">
+            <!-- sidebar -->
+    </div>
 

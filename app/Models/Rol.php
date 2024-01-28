@@ -11,16 +11,17 @@ class Rol extends Model{
         $this->db = Database::connect();
     }
 
-    public function personalRol($idPersonal){
-        $personalRol = $this->db->table('rol');
-        $condicionRol = $personalRol->where('id_rol',$idPersonal)->get();
-        return $condicionRol->getRow();
-
+    public function todosLosRoles(){
+        $tablaRoles = $this->db->table('rol');
+        $resultadosRoles = $tablaRoles->get();
+        return $resultadosRoles->getResult();
     }
 
-    public function todosLosRoles(){
-        $tablaRol = $this->db->table('rol');
-        $resultadoDeRoles = $tablaRol->get();
-        return $resultadoDeRoles->getResult();
+
+    public function rolesPorID($id){
+        $tablaRoles = $this->db->table('rol');
+        $tablaRoles->where('id_rol',$id);
+        $resultadosRoles = $tablaRoles->get();
+        return $resultadosRoles->getRow();
     }
 }

@@ -1,7 +1,4 @@
 <?=$header?>
-        <div class="col-12 bg-primary" style="height:10%">
-            <!-- sidebar -->
-        </div>
         <div class="col-12" style="height:70%">
             <div class="row justify-content-evenly mt-5" style="height:60vh">
                 <div class="col-8 border" style="height:100%">
@@ -34,8 +31,5 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col-12 shadow-lg mt-4 d-flex flex-column justify-content-center" style="height:15%">
-            <p class="fw-bold">Copyright@2024 <span class="text-primary">tareas completas</span></p>
         </div>
 <?=$footer?>
