@@ -26,7 +26,7 @@
                             class="btn btn-primary w-100"
                             href="#"
                             role="button"
-                            >Inicio</a
+                            ><i class="fa-solid fa-gauge pe-2"></i>Dashboard</a
                         >
                         
                     </li>
@@ -68,7 +68,7 @@
                             name=""
                             id=""
                             class="btn btn-primary w-100"
-                            href="#"
+                            href="<?=base_url('/personal')?>"
                             role="button"
                             >Personal</a
                         >
@@ -85,4 +85,5 @@
         </div>
     </div>
 </div>
+<div class="row bg-light" style="height:100vh;width:80%">
 
