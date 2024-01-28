@@ -38,4 +38,29 @@ class Persona extends Model{
         return $datosFinales;
     }
 
+    public function nuevaPersona($nombre,$apellido,$fecha,$email,$rol,$observacion){
+        $hoy = date('Y-m-d',time());
+        $cumpleanios = date_create($fecha);
+        $fechaDeHoy = date_create($hoy);
+        $diferencia = date_diff($fechaDeHoy,$cumpleanios);
+        $insertar = array(
+            'id_persona'=>null,
+            'nombre'=>$nombre,
+            'apellidos'=>$apellido,
+            'email'=>$email,
+            'edad'=>$diferencia->format('%y'),
+            'fecha_nacimiento'=> $fecha,
+            'create_by'=> date('Y-m-d H:i:s'),
+            'create_to'=>$this->session->get('id'),
+            'delete_by'=>null,
+            'delete_to'=>null,
+            'borrado_logico'=>0,
+            'informacion'=>$observacion,
+            'imagen'=>null,
+            'id_rol'=>$rol
+        );
+        $tablaPersona = $this->db->table('personas');
+        $tablaPersona->insert($insertar);
+    }
+
 }

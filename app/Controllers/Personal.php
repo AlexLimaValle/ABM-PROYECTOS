@@ -34,6 +34,8 @@
             $email = $this->request->getPost('email');
             $rol = $this->request->getPost('rol');
             $observacion = $this->request->getPost('observaciones');
-            
+            $persona = new Persona();
+            $persona->nuevaPersona($nombre,$apellido,$fecha,$email,$rol,$observacion);
+            return redirect()->to(base_url('/personal'));
        }
     }
