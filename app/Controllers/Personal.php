@@ -36,6 +36,12 @@
             $observacion = $this->request->getPost('observaciones');
             $persona = new Persona();
             $persona->nuevaPersona($nombre,$apellido,$fecha,$email,$rol,$observacion);
+       }
+
+       public function eliminarPersonal(){
+            $id_personal = $this->request->getGet('id');
+            $persona = new Persona();
+            $persona->deletePersonal($id_personal);
             return redirect()->to(base_url('/personal'));
        }
     }

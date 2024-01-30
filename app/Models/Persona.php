@@ -33,6 +33,7 @@ class Persona extends Model{
             $datosPersonas['nombre'] = $persona->nombre.' '.$persona->apellidos;
             $datosPersonas['correo'] = $persona->email;
             $datosPersonas['rol'] = $roles->rolesPorID($persona->id_rol)->nombre;
+            $datosPersonas['borrado_logico'] = $persona->borrado_logico;
             array_push($datosFinales,$datosPersonas);
         }
         return $datosFinales;
@@ -61,6 +62,15 @@ class Persona extends Model{
         );
         $tablaPersona = $this->db->table('personas');
         $tablaPersona->insert($insertar);
+    }
+
+    public function deletePersonal($id){
+        $tabla = $this->db->table('personas');
+        $datos = [
+            'borrado_logico'=>1
+        ];
+        $tabla->where('id_persona',$id);
+        $tabla->update($datos);
     }
 
 }

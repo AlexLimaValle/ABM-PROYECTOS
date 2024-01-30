@@ -33,11 +33,7 @@
                 <div class="d-flex flex-row justify-content-end">
                     <button type="reset" class="btn btn-danger me-2">Eliminar</button>
                     <button type="button" id="enviar" class="btn btn-primary">Guardar</button>
-                    <button type="button" id="dialogo">dialog</button>
                 </div>
-            </div>
-            <div id="dialog" class="border">
-                <h6>HOLA</h6>
             </div>
         </div>
     </div>

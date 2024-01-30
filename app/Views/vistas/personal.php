@@ -36,30 +36,40 @@
                     </thead>
                     <tbody class="">
                         <?php foreach($datos as $key=>$personal):?>
-                            <tr>
-                                <td><?=$key+1?></td>
-                                <td><?=$personal['nombre']?></td>
-                                <td><?=$personal['correo']?></td>
-                                <td><?=$personal['rol']?></td>
-                                <td>
-                                    <a
-                                        name=""
-                                        id=""
-                                        class="btn btn-primary"
-                                        href="#"
-                                        role="button"
-                                        >Ver</a
-                                    >
-                                    <a
-                                        name=""
-                                        id=""
-                                        class="btn btn-danger"
-                                        href="#"
-                                        role="button"
-                                        >Eliminar</a
-                                    >
-                                </td>
-                            </tr>
+                            <?php if($personal['borrado_logico'] != 1):?>
+                                <tr>
+                                    <td><?=$key+1?></td>
+                                    <td><?=$personal['nombre']?></td>
+                                    <td><?=$personal['correo']?></td>
+                                    <td><?=$personal['rol']?></td>
+                                    <td>
+                                        <a
+                                            name=""
+                                            id=""
+                                            class="btn btn-primary"
+                                            href="#"
+                                            role="button"
+                                            >Ver</a
+                                        >
+                                        <a
+                                            name=""
+                                            id=""
+                                            class="btn btn-success"
+                                            href="#"
+                                            role="button"
+                                            >Actualizar</a
+                                        >
+                                        <a
+                                            name=""
+                                            id=""
+                                            class="btn btn-danger"
+                                            href="<?=base_url()?>eliminarPersonal?id=<?=$personal['id']?>"
+                                            role="button"
+                                            >Eliminar</a
+                                        >
+                                    </td>
+                                </tr>
+                            <?php endif;?>
                         <?php endforeach;?>
                     </tbody>
                 </table>
