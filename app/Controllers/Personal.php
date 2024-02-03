@@ -49,8 +49,21 @@
        public function actualizarPersonal($id){
             $persona = new Persona();
             $rol = new Rol();
-            $persomaActualizar = $persona->personaConRoles($id);
-            $datosActualizar = array('header'=>view('vistas/templates/header'),'footer'=>view('vistas/templates/footer'),'persona'=>$persomaActualizar,'roles'=>$rol->todosLosRoles());
+            $personaActualizar = $persona->personaConRoles($id);
+            $datosActualizar = array('header'=>view('vistas/templates/header'),'footer'=>view('vistas/templates/footer'),'persona'=>$personaActualizar,'roles'=>$rol->todosLosRoles());
             return view('vistas/update_persona_view.php',$datosActualizar);
+       }
+
+       public function actualizacionDePersonal(){
+            $id = $this->request->getGet('id');
+            $nombre = $this->request->getGet('nombre');
+            $apellido = $this->request->getGet('apellido');
+            $fecha = $this->request->getGet('fecha');
+            $email = $this->request->getGet('email');
+            $rol = $this->request->getGet('rol');
+            $observacion = $this->request->getGet('observaciones');
+            $personaModel = new Persona();
+            $personaModel->actualizarDatosDePersonal($id,$nombre,$apellido,$fecha,$email,$rol,$observacion);
+          //   return json_encode($resultados);
        }
     }

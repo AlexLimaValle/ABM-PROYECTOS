@@ -89,7 +89,28 @@ class Persona extends Model{
         $tabla->update($datos);
     }
 
-
+    public function actualizarDatosDePersonal($id,$nombre,$apellido,$fecha,$email,$rol,$observacion){
+        $hoy = date_create();
+        $cumpleanios = date_create($fecha);
+        $edades = date_diff($hoy,$cumpleanios);
+        $edad = $edades->format('%y');
+        $tabl = $this->db->table('personas');
+        $miFecha = date_format($cumpleanios,'Y-m-d');
+        $updates = [
+            'nombre'=>$nombre,
+            'apellidos'=>$apellido,
+            'email'=>$email,
+            'edad'=> $edad,
+            'fecha_nacimiento'=>$miFecha,
+            'update_by'=>date_format($hoy,'Y-m-d H:i:s'),
+            'update_to'=>$this->session->get('id'),
+            'informacion'=>$observacion,
+            'id_rol'=>$rol
+        ];
+        $tabla = $this->db->table('personas');
+        $tabla->where('id_persona',$id);
+        $tabla->update($updates);
+    }
 
 
 }

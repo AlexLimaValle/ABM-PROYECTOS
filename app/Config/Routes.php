@@ -13,6 +13,7 @@ $routes->get('/editarPersonal', 'Personal::agregarPersonal');
 $routes->post('/guardarPersonal', 'Personal::guardarPersonal');
 $routes->get('/eliminarPersonal', 'Personal::eliminarPersonal');
 $routes->get('/actulizarPersonal/(:num)', 'Personal::actualizarPersonal/$1');
+$routes->get('/actulizar', 'Personal::actualizacionDePersonal');
 
 
 
