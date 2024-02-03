@@ -55,7 +55,7 @@
                                             name=""
                                             id=""
                                             class="btn btn-success"
-                                            href="#"
+                                            href="<?=base_url().'/actulizarPersonal/'.$personal["id"]?>"
                                             role="button"
                                             >Actualizar</a
                                         >

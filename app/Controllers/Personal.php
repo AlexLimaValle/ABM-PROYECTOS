@@ -44,4 +44,13 @@
             $persona->deletePersonal($id_personal);
             return redirect()->to(base_url('/personal'));
        }
+
+
+       public function actualizarPersonal($id){
+            $persona = new Persona();
+            $rol = new Rol();
+            $persomaActualizar = $persona->personaConRoles($id);
+            $datosActualizar = array('header'=>view('vistas/templates/header'),'footer'=>view('vistas/templates/footer'),'persona'=>$persomaActualizar,'roles'=>$rol->todosLosRoles());
+            return view('vistas/update_persona_view.php',$datosActualizar);
+       }
     }

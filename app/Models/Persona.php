@@ -39,6 +39,22 @@ class Persona extends Model{
         return $datosFinales;
     }
 
+    public function personaEspecifica(int $id){
+        $tabla = $this->db->table('personas');
+        $tabla->where('id_persona',$id);
+        $resultado = $tabla->get();
+        return $resultado->getRowArray();
+    }
+
+// este mehtodo sirve para devolver una persona especifica con sus roles 
+    public function personaConRoles(int $id){ 
+        $persona = $this->personaEspecifica($id);
+        $roles = new Rol();
+        $personaRol = $roles->rolesPorID($persona['id_rol']);
+        $persona['rol'] = $personaRol->nombre;
+        return $persona;
+    }
+
     public function nuevaPersona($nombre,$apellido,$fecha,$email,$rol,$observacion){
         $hoy = date('Y-m-d',time());
         $cumpleanios = date_create($fecha);
@@ -72,5 +88,8 @@ class Persona extends Model{
         $tabla->where('id_persona',$id);
         $tabla->update($datos);
     }
+
+
+
 
 }
