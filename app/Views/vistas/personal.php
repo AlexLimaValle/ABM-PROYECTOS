@@ -28,6 +28,7 @@
                     <thead>
                         <tr>
                             <th scope="col">N°</th>
+                            <th scope="col">Imagen</th>
                             <th scope="col">Nombre</th>
                             <th scope="col">Correo</th>
                             <th scope="col">Rol</th>

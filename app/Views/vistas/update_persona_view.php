@@ -14,9 +14,14 @@
                 <label for="dates" class="form-label">Fecha Nacimiento:</label>
                 <input type="date" value="<?=$persona['fecha_nacimiento']?>" name="fecha" class="form-control" id="dates">
             </div>
-            <div class="col-7">
+            <div class="col-4">
                 <label for="mail" class="form-label">Email:</label>
                 <input type="email" value="<?=$persona['email']?>" placeholder="Email" name="email" id="mail" class="form-control">
+            </div>
+            <div class="col-3">
+                <label for="imagenes" class="form-label">Imagen:</label>
+                <img src="data:image/*;base64,<?=$persona["imagen"]?>" style="height:20px;width:20px;" class="rounded" alt="icono">
+                <input type="file" class="form-control" name="imagen" id="imagenes">
             </div>
             <div class="col-3">
                 <label for="roles" class="form-label">Rol:</label>

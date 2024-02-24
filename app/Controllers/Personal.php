@@ -34,7 +34,7 @@
             $email = $this->request->getPost('email');
             $rol = $this->request->getPost('rol');
             $imagen = $this->request->getFile('imagen');
-            if(strlen($imagen) != 0){
+            if($imagen->isValid() && !$imagen->hasMoved()){
                  $contenidoDeImagen = file_get_contents($imagen->getTempName());
                  $convesion = base64_encode($contenidoDeImagen);
             }else{
@@ -63,6 +63,7 @@
        }
 
        public function actualizacionDePersonal(){
+
             $id = $this->request->getGet('id');
             $nombre = $this->request->getGet('nombre');
             $apellido = $this->request->getGet('apellido');

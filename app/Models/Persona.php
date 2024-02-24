@@ -71,7 +71,7 @@ class Persona extends Model{
     }
 
 
-    public function nuevaPersona($nombre,$apellido,$fecha,$email,$rol,$observacion,$contenidoDeImagen=""){
+    public function nuevaPersona($nombre,$apellido,$fecha,$email,$rol,$observacion,$contenidoDeImagen){
         $hoy = date('Y-m-d',time());
         $cumpleanios = date_create($fecha);
         $fechaDeHoy = date_create($hoy);
