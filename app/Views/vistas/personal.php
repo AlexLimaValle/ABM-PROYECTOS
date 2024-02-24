@@ -19,7 +19,7 @@
             <div class="col-4">
                 <div class="input-group">
                     <span class="input-group-text">Buscar:</span>
-                    <input type="text" class="form-control">
+                    <input type="text" id="buscador" class="form-control">
                 </div>
             </div>
         </div>
@@ -39,6 +39,9 @@
                             <?php if($personal['borrado_logico'] != 1):?>
                                 <tr>
                                     <td><?=$key+1?></td>
+                                    <td>
+                                    <img src="data:image/*;base64,<?php echo $personal['imagen']; ?>" style="width:60px;height:60px;" alt="Imagen" class="rounded">
+                                    </td>
                                     <td><?=$personal['nombre']?></td>
                                     <td><?=$personal['correo']?></td>
                                     <td><?=$personal['rol']?></td>
@@ -75,4 +78,7 @@
                 </table>
         </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="<?=base_url("javascript/buscador.js")?>"></script>
 <?=$footer?>

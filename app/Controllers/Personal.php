@@ -33,9 +33,17 @@
             $fecha = $this->request->getPost('fecha');
             $email = $this->request->getPost('email');
             $rol = $this->request->getPost('rol');
+            $imagen = $this->request->getFile('imagen');
+            if(strlen($imagen) != 0){
+                 $contenidoDeImagen = file_get_contents($imagen->getTempName());
+                 $convesion = base64_encode($contenidoDeImagen);
+            }else{
+               $convesion = IMAGEN;
+            }
             $observacion = $this->request->getPost('observaciones');
             $persona = new Persona();
-            $persona->nuevaPersona($nombre,$apellido,$fecha,$email,$rol,$observacion);
+            $persona->nuevaPersona($nombre,$apellido,$fecha,$email,$rol,$observacion,$convesion);
+            return redirect()->to(base_url('/personal'));
        }
 
        public function eliminarPersonal(){
@@ -65,5 +73,12 @@
             $personaModel = new Persona();
             $personaModel->actualizarDatosDePersonal($id,$nombre,$apellido,$fecha,$email,$rol,$observacion);
           //   return json_encode($resultados);
+       }
+
+
+       public function buscarPorNombre(){
+          $buscador = $this->request->getGet("buscador");
+          $persona = new Persona();
+          return json_encode($persona->personaPorNombre($buscador));
        }
     }

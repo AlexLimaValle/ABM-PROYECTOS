@@ -32,6 +32,7 @@ class Persona extends Model{
             $datosPersonas['id'] = $persona->id_persona;
             $datosPersonas['nombre'] = $persona->nombre.' '.$persona->apellidos;
             $datosPersonas['correo'] = $persona->email;
+            $datosPersonas['imagen'] = $persona->imagen;
             $datosPersonas['rol'] = $roles->rolesPorID($persona->id_rol)->nombre;
             $datosPersonas['borrado_logico'] = $persona->borrado_logico;
             array_push($datosFinales,$datosPersonas);
@@ -55,7 +56,22 @@ class Persona extends Model{
         return $persona;
     }
 
-    public function nuevaPersona($nombre,$apellido,$fecha,$email,$rol,$observacion){
+    // persona por nombre
+
+    public function personaPorNombre(string $nombre){
+        $tabla = $this->db->table("personas");
+        $tabla->like("nombre",$nombre,"both");
+        $resultado = $tabla->get();
+        return $resultado->getResultArray();
+    }
+
+    public function personaPorNombreConRoles(string $nombre){
+        $personasData = $this->personaPorNombre($nombre);
+        return $personaData;
+    }
+
+
+    public function nuevaPersona($nombre,$apellido,$fecha,$email,$rol,$observacion,$contenidoDeImagen=""){
         $hoy = date('Y-m-d',time());
         $cumpleanios = date_create($fecha);
         $fechaDeHoy = date_create($hoy);
@@ -73,7 +89,7 @@ class Persona extends Model{
             'delete_to'=>null,
             'borrado_logico'=>0,
             'informacion'=>$observacion,
-            'imagen'=>null,
+            'imagen'=>$contenidoDeImagen,
             'id_rol'=>$rol
         );
         $tablaPersona = $this->db->table('personas');

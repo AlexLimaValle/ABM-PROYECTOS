@@ -36,15 +36,6 @@ $(document).ready(function(){
                 icon: "warning",
                 dangerMode: true,
             })
-        }else{
-            $.ajax({
-                type:'POST',
-                data:{nombre,apellido,fecha,email,rol,observaciones},
-                url:'http://localhost/proyectos/public/guardarPersonal',
-                success:function(data){
-                    window.location.replace ("http://localhost/proyectos/public/personal");
-                }
-            })
         }
     })
 
