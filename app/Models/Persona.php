@@ -58,9 +58,10 @@ class Persona extends Model{
 
     // persona por nombre
 
-    public function personaPorNombre(string $nombre){
+    public function personaPorNombre(string $buscar){
         $tabla = $this->db->table("personas");
-        $tabla->like("nombre",$nombre,"both");
+        $tabla->like("nombre",$buscar,"both");
+        $tabla->orLike("apellidos",$buscar);
         $resultado = $tabla->get();
         return $resultado->getResultArray();
     }

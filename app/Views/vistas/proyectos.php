@@ -1,64 +1,64 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<style>
-    #main{
-        width:85%;
-        height:100vh;
-    }
-</style>
-<body>
-    <?= view_cell('App\Controllers\Home::index') ?>
-    <main id="main">
-        <div class="row justify-content-evenly align-items-center mt-5" style="height:70%;">
-            <div class="col-7">
-                <div class="card">
-                    <!-- <div class="card-header"></div> -->
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table
-                                class="table">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Column 1</th>
-                                        <th scope="col">Column 2</th>
-                                        <th scope="col">Column 3</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr class="">
-                                        <td scope="row">R1C1</td>
-                                        <td>R1C2</td>
-                                        <td>R1C3</td>
-                                    </tr>
-                                    <tr class="">
-                                        <td scope="row">Item</td>
-                                        <td>Item</td>
-                                        <td>Item</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+<?=$header?>
+    <div class="row justify-content-center">
+        <div class="col-12">
+            <h2>Lista de proyectos</h2>
+        </div>
+        <div class="col-11 border-top border-3 border-primary p-2">
+            <div class="row justify-content-end">
+                <div class="col-1 text-center">
+                    <label class="form-label" for="">Search: </label>
                 </div>
-            </div>
-            <div class="col-4">
-                <div class="bg-success rounded border border-dark row">
-                    <h4 class="text-light col-7 fs-1">0</h4>
-                    <p class="col-5 fs-1 text-center"><i class="fa-solid fa-layer-group fs-1 text-light"></i></p>
-                    <p class="text-light fs-5 b-round col-12">Total de Proyecto</p>
-                </div>
-                <div class="bg-success rounded border border-dark row mt-3">
-                    <h4 class="text-light col-7 fs-1">0</h4>
-                    <p class="col-5 fs-1 text-center"><i class="fa-solid fa-chart-simple fs-1 text-light"></i></p>
-                    <p class="text-light fs-5 b-round col-12">Total de Proyecto</p>
+                <div class="col-4">
+                    <input type="text" class="form-control">
                 </div>
             </div>
         </div>
-    </main>
-</body>
-</html>
+        <div class="col-11 card">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>N°</th>
+                        <th>Proyecto</th>
+                        <th>Fecha Inicio</th>
+                        <th>Fecha Fin</th>
+                        <th>Fecha Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach($datos as $items):?>
+                        <tr>
+                            <td><?=$items->id_proyecto?></td>
+                            <td><?=$items->nombre?></td>
+                            <td><?=$items->fecha_inicio?></td>
+                            <td><?=$items->fecha_fin?></td>
+                            <td><span class="badge text-bg-<?=$items->color?>"><?=$items->estado?></span></td>
+                            <td><a
+                                    name=""
+                                    id=""
+                                    class="btn btn-success"
+                                    href="#"
+                                    role="button"
+                                    >Ver</a>
+                                    <a
+                                    name=""
+                                    id=""
+                                    class="btn btn-primary"
+                                    href="#"
+                                    role="button"
+                                    >Editar</a>
+                                    <a
+                                    name=""
+                                    id=""
+                                    class="btn btn-danger"
+                                    href="#"
+                                    role="button"
+                                    >Eliminar</a>
+                            </td>
+                        </tr>
+                    <?php endforeach;?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+<?=$footer?>

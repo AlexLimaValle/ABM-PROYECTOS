@@ -80,6 +80,14 @@
        public function buscarPorNombre(){
           $buscador = $this->request->getGet("buscador");
           $persona = new Persona();
-          return json_encode($persona->personaPorNombre($buscador));
+          $datosEncontrados = $persona->personaPorNombre($buscador);
+
+          return json_encode($datosEncontrados);
+       }
+
+
+       public function parserDatos(array $datos){
+          $stringMaligno = '';
+          
        }
     }

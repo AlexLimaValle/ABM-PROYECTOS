@@ -15,6 +15,7 @@ $routes->get('/eliminarPersonal', 'Personal::eliminarPersonal');
 $routes->get('/actulizarPersonal/(:num)', 'Personal::actualizarPersonal/$1');
 $routes->get('/actulizar', 'Personal::actualizacionDePersonal');
 $routes->get('/buscador', 'Personal::buscarPorNombre');
+$routes->get('/proyectos', 'Proyectos::index');
 
 
 
