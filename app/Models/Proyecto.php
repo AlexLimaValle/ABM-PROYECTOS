@@ -5,7 +5,7 @@ namespace App\Models;
 use CodeIgniter\Model;
 use Config\Database;
 use Config\Services;
-
+use App\Models\ProyectoDetalle;
 
 class Proyecto extends Model{
     protected $table = 'proyecto';
@@ -16,7 +16,7 @@ class Proyecto extends Model{
     public function __construct(){
         parent::__construct();
         $this->db = Database::connect();
-        $this->db = Services::session();
+        $this->session = Services::session();
     }
 
     public function todosLosProyectos(){
@@ -25,7 +25,36 @@ class Proyecto extends Model{
         return $datos->getResult();
     }
 
-    
+    public function buscarPorNombre(string $nombre){
+        $tabla = $this->db->table('proyecto');
+        $tabla->like('nombre',$nombre);
+        $resultados = $tabla->get();
+        return $resultados->getRow();
+    }
+
+    public function agregarProyectosNuevos($nombreProyecto,$estado,$fechaInicio,$fechaFin,$miembro,$descripcion){
+        $table = $this->db->table('proyecto');
+        $creador = $this->session->get('id');
+        $datos = array(
+            'id_proyecto'=>null,
+            'nombre'=>$nombreProyecto,
+            'fecha_inicio'=>$fechaInicio,
+            'fecha_fin'=>$fechaFin,
+            'estado'=>$estado,
+            'create_by'=>date('Y-m-d h:i:s'),
+            'create_to'=>$creador,
+            'delete_by'=>null,
+            'delete_to'=>null,
+            'borrado_logico'=>0,
+            'observacion'=>$descripcion
+        );
+        $table->insert($datos);
+        $buscarProyecto = $this->buscarPorNombre($nombreProyecto);
+        $idProyecto = $buscarProyecto->id_proyecto;
+        $proyectosDetalle = new ProyectoDetalle();
+        $proyectosDetalle->agregarNuevoRegistro($idProyecto,$miembro);
+        
+    }
     
 
 }

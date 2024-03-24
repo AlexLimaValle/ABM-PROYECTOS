@@ -3,6 +3,7 @@
     namespace App\Controllers;
     use App\Models\Proyecto;
     use App\Models\Estados;
+    use App\Models\Persona;
 
     class Proyectos extends BaseController{
         
@@ -48,5 +49,30 @@
                 array_push($datosDefinitivos,(object)$datos);
             }
             return $datosDefinitivos;
+        }
+
+        public function agregarNuevoProyecto(){
+            $estados = new Estados();
+            $personas = new Persona();
+            $todosLosEstados = $estados->todosLosEstados();
+            $todasLasPersonas = $personas->todasLasPersonas();
+            $datos = ['header'=>view("vistas/templates/header"),
+            'footer'=>view("vistas/templates/footer"),
+            'estados'=>$todosLosEstados,
+            'personas'=>$todasLasPersonas
+            ];
+            return view('vistas/nuevo_proyecto_view',$datos);
+        }
+
+        public function guardarProyecto(){
+            $nombreProyecto = $this->request->getPost("nombreProyecto");
+            $estado = $this->request->getPost("estado");
+            $fechaInicio = $this->request->getPost("fecha_inicio");
+            $fechaFin = $this->request->getPost("fecha_fin");
+            $miembro = $this->request->getPost("miembro");
+            $descipcion = $this->request->getPost("descripcion");
+            $proyectos = new Proyecto();
+            $proyectos->agregarProyectosNuevos($nombreProyecto,$estado,$fechaInicio,$fechaFin,$miembro,$descipcion);
+            return redirect()->to(base_url('/proyectos'));
         }
     }   

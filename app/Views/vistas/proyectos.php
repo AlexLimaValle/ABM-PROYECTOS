@@ -3,6 +3,21 @@
         <div class="col-12">
             <h2>Lista de proyectos</h2>
         </div>
+        <div class="col-12">
+            <div class="row justify-content-end">
+                <div class="col-3">
+                    <a
+                        name=""
+                        id=""
+                        class="btn btn-primary"
+                        href="<?=base_url("/crearProyecto")?>"
+                        role="button"
+                        >Crear Proyecto</a
+                    >
+                    
+                </div>
+            </div>
+        </div>
         <div class="col-11 border-top border-3 border-primary p-2">
             <div class="row justify-content-end">
                 <div class="col-1 text-center">
