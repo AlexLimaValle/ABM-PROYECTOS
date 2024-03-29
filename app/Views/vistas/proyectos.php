@@ -5,7 +5,7 @@
         </div>
         <div class="col-12">
             <div class="row justify-content-end">
-                <div class="col-3">
+                <div class="col-3 mb-3">
                     <a
                         name=""
                         id=""
@@ -14,7 +14,6 @@
                         role="button"
                         >Crear Proyecto</a
                     >
-                    
                 </div>
             </div>
         </div>
@@ -52,7 +51,7 @@
                                     name=""
                                     id=""
                                     class="btn btn-success"
-                                    href="#"
+                                    href="<?=base_url()?>verProyecto/<?=$items->id_proyecto?>"
                                     role="button"
                                     >Ver</a>
                                     <a

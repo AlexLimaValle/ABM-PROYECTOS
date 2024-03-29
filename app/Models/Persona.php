@@ -71,6 +71,12 @@ class Persona extends Model{
         return $personaData;
     }
 
+    public function nombrePersonaPorID($id){
+        $tabla = $this->db->table('personas');
+        $tabla->where("id_persona",$id);
+        $resultado = $tabla->get();
+        return $resultado->getRow();
+    }
 
     public function nuevaPersona($nombre,$apellido,$fecha,$email,$rol,$observacion,$contenidoDeImagen){
         $hoy = date('Y-m-d',time());

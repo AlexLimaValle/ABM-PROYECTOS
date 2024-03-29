@@ -28,4 +28,12 @@
                 $table->insert($datos);
             }
         }
+
+        public function miembrosDeProyecto($id){
+            $tablas = $this->db->table("proyecto_detalle");
+            $tablas->where("id_proyecto",$id);
+            $resultado = $tablas->get();
+            return $resultado->getResult();
+        }
+
     }

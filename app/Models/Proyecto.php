@@ -19,8 +19,16 @@ class Proyecto extends Model{
         $this->session = Services::session();
     }
 
+    public function proyectoId($id){
+        $tabla = $this->db->table('proyecto');
+        $tabla->where('id_proyecto',$id);
+        $resultado = $tabla->get();
+        return $resultado->getRow();
+    }
+
     public function todosLosProyectos(){
         $datosProyectos = $this->table("proyectos");
+        $datosProyectos->where('borrado_logico',0);
         $datos = $datosProyectos->get();
         return $datos->getResult();
     }
@@ -46,7 +54,7 @@ class Proyecto extends Model{
             'delete_by'=>null,
             'delete_to'=>null,
             'borrado_logico'=>0,
-            'observacion'=>$descripcion
+            'descripcion'=>$descripcion
         );
         $table->insert($datos);
         $buscarProyecto = $this->buscarPorNombre($nombreProyecto);

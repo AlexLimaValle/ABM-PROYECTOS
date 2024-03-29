@@ -27,7 +27,7 @@
                 </div>
                 <div class="col-4">
                     <label for="integrates" class="form-label"><span class="fw-bold">Miembros del Equipo de Proyecto</span></label>
-                    <div class="overflow-auto d-flex flex-row justify-content-evenly border text-center" style="width:700px;height:80px">
+                    <div class="overflow-auto d-flex flex-row justify-content-evenly border text-center" style="width:700px;height:45px">
                         <?php foreach($personas as $persona):?>
                             <label class="miembro form-label" style="height:20px;margin-top:5px" for="<?=$persona->id_persona?>"><?=$persona->nombre." ".$persona->apellidos?></label>
                             <input class="form-check-input" type="checkbox" name="miembro[]" value="<?=$persona->id_persona?>" style="display:none;" id="<?=$persona->id_persona?>">
