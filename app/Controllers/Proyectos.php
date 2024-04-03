@@ -7,6 +7,10 @@
     use App\Models\ProyectoDetalle;
 
     class Proyectos extends BaseController{
+
+        /**
+         * @return mixed 
+         */ 
         
         public function index(){
             $data = new Proyecto();
@@ -82,7 +86,6 @@
                 "fecha_fin"=>'required',
                 "miembro"=>'required',
             ];
-
             if($this->validate($rules)){
                 $nombreProyecto = $this->request->getPost("nombreProyecto");
                 $estado = $this->request->getPost("estado");

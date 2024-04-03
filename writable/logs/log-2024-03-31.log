@@ -1,0 +1,72 @@
+ERROR - 2024-03-31 10:52:33 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'NOT NULL,
+	CONSTRAINT `pk_ordenes` PRIMARY KEY(`id`)
+) DEFAULT CHARACTER SET ...' at line 3 in C:\xampp\htdocs\proyectos\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\proyectos\system\Database\MySQLi\Connection.php(306): mysqli->query('CREATE TABLE `o...', 0)
+#1 C:\xampp\htdocs\proyectos\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `o...')
+#2 C:\xampp\htdocs\proyectos\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `o...')
+#3 C:\xampp\htdocs\proyectos\system\Database\Forge.php(546): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `o...')
+#4 C:\xampp\htdocs\proyectos\app\Database\Migrations\2024-03-31-104313_Ordenes.php(28): CodeIgniter\Database\Forge->createTable('ordenes')
+#5 C:\xampp\htdocs\proyectos\system\Database\MigrationRunner.php(873): App\Database\Migrations\Ordenes->up()
+#6 C:\xampp\htdocs\proyectos\system\Database\MigrationRunner.php(188): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 C:\xampp\htdocs\proyectos\system\Commands\Database\Migrate.php(84): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\xampp\htdocs\proyectos\system\CLI\Commands.php(65): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\xampp\htdocs\proyectos\system\CLI\Console.php(46): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 C:\xampp\htdocs\proyectos\spark(102): CodeIgniter\CLI\Console->run()
+#11 {main}
+ERROR - 2024-03-31 10:55:10 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'NOT NULL,
+	CONSTRAINT `pk_ordenes` PRIMARY KEY(`id`)
+) DEFAULT CHARACTER SET ...' at line 3 in C:\xampp\htdocs\proyectos\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\proyectos\system\Database\MySQLi\Connection.php(306): mysqli->query('CREATE TABLE `o...', 0)
+#1 C:\xampp\htdocs\proyectos\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `o...')
+#2 C:\xampp\htdocs\proyectos\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `o...')
+#3 C:\xampp\htdocs\proyectos\system\Database\Forge.php(546): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `o...')
+#4 C:\xampp\htdocs\proyectos\app\Database\Migrations\2024-03-31-104313_Ordenes.php(28): CodeIgniter\Database\Forge->createTable('ordenes')
+#5 C:\xampp\htdocs\proyectos\system\Database\MigrationRunner.php(873): App\Database\Migrations\Ordenes->up()
+#6 C:\xampp\htdocs\proyectos\system\Database\MigrationRunner.php(188): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 C:\xampp\htdocs\proyectos\system\Commands\Database\Migrate.php(84): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\xampp\htdocs\proyectos\system\CLI\Commands.php(65): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\xampp\htdocs\proyectos\system\CLI\Console.php(46): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 C:\xampp\htdocs\proyectos\spark(102): CodeIgniter\CLI\Console->run()
+#11 {main}
+INFO - 2024-03-31 11:01:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-31 11:01:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-03-31 11:02:04 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'NOT NULL,
+	CONSTRAINT `pk_ordenes` PRIMARY KEY(`id`)
+) DEFAULT CHARACTER SET ...' at line 3 in C:\xampp\htdocs\proyectos\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\proyectos\system\Database\MySQLi\Connection.php(306): mysqli->query('CREATE TABLE `o...', 0)
+#1 C:\xampp\htdocs\proyectos\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('CREATE TABLE `o...')
+#2 C:\xampp\htdocs\proyectos\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('CREATE TABLE `o...')
+#3 C:\xampp\htdocs\proyectos\system\Database\Forge.php(546): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `o...')
+#4 C:\xampp\htdocs\proyectos\app\Database\Migrations\2024-03-31-104313_Ordenes.php(28): CodeIgniter\Database\Forge->createTable('ordenes')
+#5 C:\xampp\htdocs\proyectos\system\Database\MigrationRunner.php(873): App\Database\Migrations\Ordenes->up()
+#6 C:\xampp\htdocs\proyectos\system\Database\MigrationRunner.php(188): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+#7 C:\xampp\htdocs\proyectos\app\Controllers\Proyectos.php(147): CodeIgniter\Database\MigrationRunner->latest()
+#8 C:\xampp\htdocs\proyectos\system\CodeIgniter.php(942): App\Controllers\Proyectos->crearTabla()
+#9 C:\xampp\htdocs\proyectos\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proyectos))
+#10 C:\xampp\htdocs\proyectos\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\proyectos\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-03-31 11:02:04 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'NOT NULL,
+	CONSTRAINT `pk_ordenes` PRIMARY KEY(`id`)
+) DEFAULT CHARACTER SET ...' at line 3
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\Forge.php(546): CodeIgniter\Database\BaseConnection->query('CREATE TABLE `ordenes` (
+	`id` INT(11) NOT NULL AUTO_INCREMENT,
+	`nombre` VARCHAR NOT NULL,
+	CONSTRAINT `pk_ordenes` PRIMARY KEY(`id`)
+) DEFAULT CHARACTER SET = utf8 COLLATE = utf8_general_ci')
+ 2 APPPATH\Database\Migrations\2024-03-31-104313_Ordenes.php(28): CodeIgniter\Database\Forge->createTable('ordenes')
+ 3 SYSTEMPATH\Database\MigrationRunner.php(873): App\Database\Migrations\Ordenes->up()
+ 4 SYSTEMPATH\Database\MigrationRunner.php(188): CodeIgniter\Database\MigrationRunner->migrate('up', Object(stdClass))
+ 5 APPPATH\Controllers\Proyectos.php(147): CodeIgniter\Database\MigrationRunner->latest()
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Proyectos->crearTabla()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proyectos))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-03-31 11:04:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-31 11:05:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-31 13:00:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-31 13:00:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
