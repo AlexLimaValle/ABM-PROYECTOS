@@ -63,7 +63,6 @@
        }
 
        public function actualizacionDePersonal(){
-
             $id = $this->request->getGet('id');
             $nombre = $this->request->getGet('nombre');
             $apellido = $this->request->getGet('apellido');
@@ -73,7 +72,6 @@
             $observacion = $this->request->getGet('observaciones');
             $personaModel = new Persona();
             $personaModel->actualizarDatosDePersonal($id,$nombre,$apellido,$fecha,$email,$rol,$observacion);
-          //   return json_encode($resultados);
        }
 
 
