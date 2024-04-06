@@ -9,7 +9,8 @@ $(document).ready(function(){
                 "url":"http://localhost/proyectos/public/buscador",
                 "data":{buscador}
             ,success:function(data){
-                console.log(data);
+                var decodear = jQuery.parseJSON(data);
+                $('#mi_tabla').html(decodear)
             }})
         }
     })

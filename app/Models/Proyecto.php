@@ -63,6 +63,13 @@ class Proyecto extends Model{
         $proyectosDetalle->agregarNuevoRegistro($idProyecto,$miembro);
         
     }
-    
 
+
+    public function eliminarProyect($id){
+        $tabla = $this->db->table("proyecto");
+        $tabla->set('borrado_logico','1',false);
+        $tabla->where("id_proyecto",$id);
+        $tabla->update();
+    }
+    
 }

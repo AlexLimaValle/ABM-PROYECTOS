@@ -40,9 +40,9 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach($datos as $items):?>
+                    <?php foreach($datos as $key=>$items):?>
                         <tr>
-                            <td><?=$items->id_proyecto?></td>
+                            <td><?=$key+1?></td>
                             <td><?=$items->nombre?></td>
                             <td><?=$items->fecha_inicio?></td>
                             <td><?=$items->fecha_fin?></td>
@@ -65,7 +65,7 @@
                                     name=""
                                     id=""
                                     class="btn btn-danger"
-                                    href="#"
+                                    href="<?=base_url("/eliminarProyecto").'/'.$items->id_proyecto?>"
                                     role="button"
                                     >Eliminar</a>
                             </td>

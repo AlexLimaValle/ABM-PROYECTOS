@@ -22,6 +22,8 @@ $routes->get('/proyectos', 'Proyectos::index');
 $routes->get('/crearProyecto', 'Proyectos::agregarNuevoProyecto');
 $routes->post('/guardarProyecto', 'Proyectos::guardarProyecto');
 $routes->get('/verProyecto/(:num)', [[Proyectos::class,'visualizarProyecto'],'$1']);
+$routes->get('/eliminarProyecto/(:num)', 'Proyectos::eliminarProyecto/$1');
+
 
 
 

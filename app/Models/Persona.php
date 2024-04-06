@@ -63,7 +63,7 @@ class Persona extends Model{
         $tabla->like("nombre",$buscar,"both");
         $tabla->orLike("apellidos",$buscar);
         $resultado = $tabla->get();
-        return $resultado->getResultArray();
+        return $resultado->getResult();
     }
 
     public function personaPorNombreConRoles(string $nombre){
