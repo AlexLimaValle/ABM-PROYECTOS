@@ -35,7 +35,7 @@
                             <th scope="col">Acciones</th>
                         </tr>
                     </thead>
-                    <tbody class="">
+                    <tbody id="mi_tabla">
                         <?php foreach($datos as $key=>$personal):?>
                             <?php if($personal['borrado_logico'] != 1):?>
                                 <tr>

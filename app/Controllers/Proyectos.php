@@ -74,7 +74,7 @@
             $rules = [
                 "nombreProyecto"=>[
                     "label"=>"nombreProyecto",
-                    "rules"=>'required|max_length[30]|min_length[10]',
+                    "rules"=>'required|max_length[30]|min_length[5]',
                     "errors"=>[
                         'required'=>'El nombre del proyecto es obligatorio',
                         'max_length'=>'el nombre del proyecto es largo',
@@ -142,5 +142,11 @@
                 array_push($registroDePersona,$datosPersona);
             }
             return $registroDePersona;
+        }
+
+        public function eliminarProyecto($id){
+            $proyectos = new Proyecto();
+            $proyectos->eliminarProyect($id);
+            return redirect()->to("/proyectos");
         }
     }   

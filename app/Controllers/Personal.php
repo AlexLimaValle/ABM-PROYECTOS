@@ -63,7 +63,6 @@
        }
 
        public function actualizacionDePersonal(){
-
             $id = $this->request->getGet('id');
             $nombre = $this->request->getGet('nombre');
             $apellido = $this->request->getGet('apellido');
@@ -73,7 +72,6 @@
             $observacion = $this->request->getGet('observaciones');
             $personaModel = new Persona();
             $personaModel->actualizarDatosDePersonal($id,$nombre,$apellido,$fecha,$email,$rol,$observacion);
-          //   return json_encode($resultados);
        }
 
 
@@ -81,13 +79,52 @@
           $buscador = $this->request->getGet("buscador");
           $persona = new Persona();
           $datosEncontrados = $persona->personaPorNombre($buscador);
-
-          return json_encode($datosEncontrados);
+          $transformarDatos = $this->parserDatos($datosEncontrados);
+          return json_encode($transformarDatos);
        }
 
-
        public function parserDatos(array $datos){
-          $stringMaligno = '';
-          
+          $templateHtml = '';
+          foreach($datos as $key=>$data){
+               $numero = $key + 1;
+               $templateHtml .= <<<EOD
+                    <tr>
+                         <td>$numero</td>
+                         <td>
+                              <img src="data:image/*;base64,$data->imagen" style="width:60px;height:60px;" alt="Imagen" class="rounded"/>
+                         </td>
+                         <td>$data->nombre</td>
+                         <td>$data->email</td>
+                         <td>$data->id_rol</td>
+                         <td>
+                              <a
+                              name=""
+                              id=""
+                              class="btn btn-primary"
+                              href="#"
+                              role="button"
+                              >Ver</a
+                              >
+                              <a
+                                  name=""
+                                  id=""
+                                  class="btn btn-success"
+                                  href="http://localhost/proyectos/public/actulizarPersonal/$data->id_persona"
+                                  role="button"
+                                  >Actualizar</a
+                              >
+                              <a
+                                  name=""
+                                  id=""
+                                  class="btn btn-danger"
+                                  href="http://localhost/proyectos/public/eliminarPersonal?id=$data->id_persona"
+                                  role="button"
+                                  >Eliminar</a
+                              >
+                         </td>
+                    </tr>
+               EOD;
+          }
+          return $templateHtml;
        }
     }

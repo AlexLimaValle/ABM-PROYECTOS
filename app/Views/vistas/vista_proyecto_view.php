@@ -48,7 +48,63 @@
                 </div>
             </div>
             <div class="col-7 mt-2">
-                <div class="border-top border-3 border-primary"></div>
+                <div class="border-top border-3 border-primary overflow-hidden row justify-content-between">
+                    <div class="col-4 mt-2"><h5 class="">Lista de Tareas:</h5></div>
+                    <div class="col-3 mt-2">
+                        <a
+                            name=""
+                            id=""
+                            class="btn btn-primary"
+                            href="#"
+                            role="button"
+                            data-bs-toggle="modal" 
+                            data-bs-target="#staticBackdrop"
+                            >+ Nueva tarea</a
+                        >
+                        
+                    </div>
+                    <table class="table col-12">
+                        <thead>
+                            <tr>
+                                <th>N°</th>
+                                <th>Tarea</th>
+                                <th>Descripcion</th>
+                                <th>Estado</th>
+                                <th>Accion</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>                              
+            <!-- Modal -->
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+              <div class="modal-dialog modal-lg">
+                <form class="modal-content" action="" method="POST">
+                  <div class="modal-header">
+                    <h2 class="modal-title fs-5 text-secondary" id="staticBackdropLabel"><?=strtoupper($proyecto->nombre)?></h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="row justify-content-center">
+                        <div class="col-10">
+                            <label class="form-label" for="nombreTarea">Tarea</label>
+                            <input type="text" id="nombreTarea" name="tarea" class="form-control">
+                        </div>
+                        <div class="col-10">
+                            <label for="" class="form-label">Descripcion:</label>
+                            <textarea class="form-control" name="" id="" cols="30" rows="10"></textarea>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="submit" class="btn btn-primary">Agregar</button>
+                  </div>
+                </form>
+              </div>
             </div>
         </div>
     </div>
