@@ -6,7 +6,7 @@ use CodeIgniter\Model;
 
 class EstadoTarea extends Model
 {
-    protected $table            = 'estadotareas';
+    protected $table            = 'estado_tarea';
     protected $primaryKey       = 'id_estado';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
@@ -46,5 +46,27 @@ class EstadoTarea extends Model
         $this->session = \Config\Services::session();
     }
 
-    
+    public function todosLosEstados(){
+        $tabla = $this->db->table("estado_tarea");
+        $resultados = $this->get();
+        return $resultados->getResult();
+    }
+
+    public function mostrarEstadoDelaTarea(array $estados){
+        $mostraTodosLosEstados = $this->todosLosEstados();
+        foreach($estados as $key=>$estado){
+            $datos[$key+1]= [
+                'id_tarea'=>$estado->id_tarea,
+                 'nombre'=>$estado->nombre,
+                 'descripcion'=>$estado->descripcion,
+                 'nombreEstado'=>''
+            ]; 
+            foreach($mostraTodosLosEstados as $items){
+                if($estado->id_estado == $items->id_estado){
+                    $datos[$key+1]['nombreEstado'] = $items->nombre;
+                }
+            }
+        }
+        return $datos;
+    }
 }

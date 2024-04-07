@@ -5,12 +5,21 @@
     use App\Models\Estados;
     use App\Models\Persona;
     use App\Models\ProyectoDetalle;
-
+    use App\Models\EstadoTarea;
+    use App\Models\Tarea;
+    use Config\Services;
     class Proyectos extends BaseController{
 
         /**
          * @return mixed 
-         */ 
+         * 
+         */
+        
+        private $session;
+
+        public function __construct(){
+            $this->session = Services::session();
+        }
         
         public function index(){
             $data = new Proyecto();
@@ -115,16 +124,23 @@
         }
 
         public function visualizarProyecto($id){
+            helper('form');
             $miembros = new ProyectoDetalle();
+            $estadoDeTarea = new EstadoTarea(); 
             $gente = $miembros->miembrosDeProyecto($id);
             $nombresYApellidos = $this->extraerMiembros($gente);
             $proyectos = new Proyecto();
             $datosProyecto = $proyectos->proyectoId($id);
+            $estadosDeTareas = $estadoDeTarea->todosLosEstados();
+            $tarea = new Tarea();
+            $todasLasTareas = $tarea->buscarTareaPorID($id);
             $datos = array(
                 "header"=>view('vistas\templates\header'),
                 "footer"=>view('vistas\templates\footer'),
                 "proyecto"=>$datosProyecto,
-                "personal"=>$nombresYApellidos
+                "personal"=>$nombresYApellidos,
+                'estadoDeTarea'=>$estadosDeTareas,
+                'tareas'=>$todasLasTareas
             );
             return view('vistas/vista_proyecto_view',$datos);
         }
@@ -148,5 +164,28 @@
             $proyectos = new Proyecto();
             $proyectos->eliminarProyect($id);
             return redirect()->to("/proyectos");
+        }
+
+        public function agregarTarea($id){
+            $nombreDeTarea = $this->request->getGet('tarea');
+            $descripcion = $this->request->getGet('descripcion');
+            $idEstadoTarea = $this->request->getGet('estadoDeTarea');
+            $fechaCreado = date_create();
+            $creadoPor = $this->session->get('id');
+            $nuevaTarea = [
+                'id_tarea'=>null,
+                'nombre'=>$nombreDeTarea,
+                'descripcion'=>$descripcion,
+                'create_by'=>date_format($fechaCreado,'Y-m-d h:i:s'),
+                'create_to'=>$creadoPor,
+                'delete_by'=>null,
+                'delete_to'=>null,
+                'borrado_logico'=>0,
+                'id_proyecto'=>$id,
+                'id_estado'=>$idEstadoTarea
+            ];
+            $tarea = new Tarea();
+            $tarea->agregarTarea($nuevaTarea);
+            return redirect()->to(base_url('/verProyecto/'.$id));
         }
     }   

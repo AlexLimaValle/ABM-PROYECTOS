@@ -47,8 +47,8 @@
                     <?php endforeach;?>
                 </div>
             </div>
-            <div class="col-7 mt-2">
-                <div class="border-top border-3 border-primary overflow-hidden row justify-content-between">
+            <div class="col-7 mt-2"  style="overflow:auto;height:200px">
+                <div class="border-top border-3 border-primary row justify-content-between">
                     <div class="col-4 mt-2"><h5 class="">Lista de Tareas:</h5></div>
                     <div class="col-3 mt-2">
                         <a
@@ -74,15 +74,23 @@
                             </tr>
                         </thead>
                         <tbody>
-                            
-                        </tbody>
+                            <?php foreach($tareas as $key=>$items):?>
+                                <tr>
+                                    <td><?=$key?></td>
+                                    <td><?=$items['nombre']?></td>
+                                    <td><?=$items['descripcion']?></td>
+                                    <td><?=$items['nombreEstado']?></td>
+                                    <td>23</td>
+                                </tr>
+                            <?php endforeach;?>
+                        </tbody>   
                     </table>
                 </div>
             </div>                              
             <!-- Modal -->
             <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
               <div class="modal-dialog modal-lg">
-                <form class="modal-content" action="" method="POST">
+                <form class="modal-content" action="<?=base_url('/tarea/agregar/'.$proyecto->id_proyecto);?>" method="GET">
                   <div class="modal-header">
                     <h2 class="modal-title fs-5 text-secondary" id="staticBackdropLabel"><?=strtoupper($proyecto->nombre)?></h2>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -94,8 +102,16 @@
                             <input type="text" id="nombreTarea" name="tarea" class="form-control">
                         </div>
                         <div class="col-10">
-                            <label for="" class="form-label">Descripcion:</label>
-                            <textarea class="form-control" name="" id="" cols="30" rows="10"></textarea>
+                            <label for="desc" class="form-label">Descripcion:</label>
+                            <textarea class="form-control" name="descripcion" id="desc" cols="30" rows="10"></textarea>
+                        </div>
+                        <div class="col-10">
+                            <?php 
+                            foreach($estadoDeTarea as $key=>$estado){
+                                $estados[$key+1] = $estado->nombre; 
+                            }
+                            echo form_dropdown('estadoDeTarea',$estados,'1',['class'=>'form-select mt-2']);
+                            ?>
                         </div>
                     </div>
                   </div>

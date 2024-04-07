@@ -25,6 +25,11 @@ $routes->get('/verProyecto/(:num)', [[Proyectos::class,'visualizarProyecto'],'$1
 $routes->get('/eliminarProyecto/(:num)', 'Proyectos::eliminarProyecto/$1');
 
 
+//tarea 
+$routes->group('/tarea/',function($routes){   
+    $routes->get('agregar/(:num)','Proyectos::agregarTarea/$1');
+});
+
 
 
 

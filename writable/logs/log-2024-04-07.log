@@ -1,0 +1,564 @@
+INFO - 2024-04-07 13:06:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 13:06:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 13:06:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 13:06:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 13:07:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 13:07:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 13:23:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-04-07 13:23:20 --> mysqli_sql_exception: Table 'proyectos.estadotareas' doesn't exist in C:\xampp\htdocs\proyectos\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\proyectos\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\proyectos\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\proyectos\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\proyectos\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\proyectos\system\Model.php(871): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyectos\app\Models\EstadoTarea.php(51): CodeIgniter\Model->__call('get', Array)
+#6 C:\xampp\htdocs\proyectos\app\Controllers\Proyectos.php(126): App\Models\EstadoTarea->todosLosEstados()
+#7 C:\xampp\htdocs\proyectos\system\CodeIgniter.php(942): App\Controllers\Proyectos->visualizarProyecto('6')
+#8 C:\xampp\htdocs\proyectos\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proyectos))
+#9 C:\xampp\htdocs\proyectos\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\proyectos\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2024-04-07 13:23:20 --> Table 'proyectos.estadotareas' doesn't exist
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `estadotareas`', [], false)
+ 2 SYSTEMPATH\Model.php(871): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Models\EstadoTarea.php(51): CodeIgniter\Model->__call('get', [])
+ 4 APPPATH\Controllers\Proyectos.php(126): App\Models\EstadoTarea->todosLosEstados()
+ 5 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Proyectos->visualizarProyecto('6')
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proyectos))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-07 13:24:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-04-07 13:24:07 --> mysqli_sql_exception: Table 'proyectos.estadotareas' doesn't exist in C:\xampp\htdocs\proyectos\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\proyectos\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\proyectos\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\proyectos\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\proyectos\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\proyectos\system\Model.php(871): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyectos\app\Models\EstadoTarea.php(51): CodeIgniter\Model->__call('get', Array)
+#6 C:\xampp\htdocs\proyectos\app\Controllers\Proyectos.php(126): App\Models\EstadoTarea->todosLosEstados()
+#7 C:\xampp\htdocs\proyectos\system\CodeIgniter.php(942): App\Controllers\Proyectos->visualizarProyecto('6')
+#8 C:\xampp\htdocs\proyectos\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proyectos))
+#9 C:\xampp\htdocs\proyectos\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\proyectos\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2024-04-07 13:24:07 --> Table 'proyectos.estadotareas' doesn't exist
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `estadotareas`', [], false)
+ 2 SYSTEMPATH\Model.php(871): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Models\EstadoTarea.php(51): CodeIgniter\Model->__call('get', [])
+ 4 APPPATH\Controllers\Proyectos.php(126): App\Models\EstadoTarea->todosLosEstados()
+ 5 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Proyectos->visualizarProyecto('6')
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proyectos))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-07 13:24:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 13:24:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 13:24:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 13:24:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 13:24:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 13:24:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-04-07 13:24:25 --> mysqli_sql_exception: Table 'proyectos.estadotareas' doesn't exist in C:\xampp\htdocs\proyectos\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\proyectos\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\proyectos\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\proyectos\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\proyectos\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\proyectos\system\Model.php(871): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyectos\app\Models\EstadoTarea.php(51): CodeIgniter\Model->__call('get', Array)
+#6 C:\xampp\htdocs\proyectos\app\Controllers\Proyectos.php(126): App\Models\EstadoTarea->todosLosEstados()
+#7 C:\xampp\htdocs\proyectos\system\CodeIgniter.php(942): App\Controllers\Proyectos->visualizarProyecto('6')
+#8 C:\xampp\htdocs\proyectos\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proyectos))
+#9 C:\xampp\htdocs\proyectos\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\proyectos\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2024-04-07 13:24:25 --> Table 'proyectos.estadotareas' doesn't exist
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `estadotareas`', [], false)
+ 2 SYSTEMPATH\Model.php(871): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Models\EstadoTarea.php(51): CodeIgniter\Model->__call('get', [])
+ 4 APPPATH\Controllers\Proyectos.php(126): App\Models\EstadoTarea->todosLosEstados()
+ 5 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Proyectos->visualizarProyecto('6')
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proyectos))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-07 13:24:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 13:25:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 13:25:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-04-07 13:25:09 --> mysqli_sql_exception: Table 'proyectos.estadotareas' doesn't exist in C:\xampp\htdocs\proyectos\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\proyectos\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\proyectos\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\proyectos\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\proyectos\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\proyectos\system\Model.php(871): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyectos\app\Models\EstadoTarea.php(51): CodeIgniter\Model->__call('get', Array)
+#6 C:\xampp\htdocs\proyectos\app\Controllers\Proyectos.php(126): App\Models\EstadoTarea->todosLosEstados()
+#7 C:\xampp\htdocs\proyectos\system\CodeIgniter.php(942): App\Controllers\Proyectos->visualizarProyecto('6')
+#8 C:\xampp\htdocs\proyectos\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proyectos))
+#9 C:\xampp\htdocs\proyectos\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\proyectos\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2024-04-07 13:25:09 --> Table 'proyectos.estadotareas' doesn't exist
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `estadotareas`', [], false)
+ 2 SYSTEMPATH\Model.php(871): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Models\EstadoTarea.php(51): CodeIgniter\Model->__call('get', [])
+ 4 APPPATH\Controllers\Proyectos.php(126): App\Models\EstadoTarea->todosLosEstados()
+ 5 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Proyectos->visualizarProyecto('6')
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proyectos))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-07 13:25:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 13:25:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-04-07 13:25:27 --> mysqli_sql_exception: Table 'proyectos.estadotareas' doesn't exist in C:\xampp\htdocs\proyectos\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\proyectos\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\proyectos\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\proyectos\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\proyectos\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\proyectos\system\Model.php(871): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyectos\app\Models\EstadoTarea.php(51): CodeIgniter\Model->__call('get', Array)
+#6 C:\xampp\htdocs\proyectos\app\Controllers\Proyectos.php(126): App\Models\EstadoTarea->todosLosEstados()
+#7 C:\xampp\htdocs\proyectos\system\CodeIgniter.php(942): App\Controllers\Proyectos->visualizarProyecto('6')
+#8 C:\xampp\htdocs\proyectos\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proyectos))
+#9 C:\xampp\htdocs\proyectos\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\proyectos\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2024-04-07 13:25:27 --> Table 'proyectos.estadotareas' doesn't exist
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `estadotareas`', [], false)
+ 2 SYSTEMPATH\Model.php(871): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Models\EstadoTarea.php(51): CodeIgniter\Model->__call('get', [])
+ 4 APPPATH\Controllers\Proyectos.php(126): App\Models\EstadoTarea->todosLosEstados()
+ 5 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Proyectos->visualizarProyecto('6')
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proyectos))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-07 13:25:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 13:25:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-04-07 13:25:31 --> mysqli_sql_exception: Table 'proyectos.estadotareas' doesn't exist in C:\xampp\htdocs\proyectos\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\proyectos\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\proyectos\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\proyectos\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\proyectos\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\proyectos\system\Model.php(871): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyectos\app\Models\EstadoTarea.php(51): CodeIgniter\Model->__call('get', Array)
+#6 C:\xampp\htdocs\proyectos\app\Controllers\Proyectos.php(126): App\Models\EstadoTarea->todosLosEstados()
+#7 C:\xampp\htdocs\proyectos\system\CodeIgniter.php(942): App\Controllers\Proyectos->visualizarProyecto('6')
+#8 C:\xampp\htdocs\proyectos\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proyectos))
+#9 C:\xampp\htdocs\proyectos\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\proyectos\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2024-04-07 13:25:31 --> Table 'proyectos.estadotareas' doesn't exist
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `estadotareas`', [], false)
+ 2 SYSTEMPATH\Model.php(871): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Models\EstadoTarea.php(51): CodeIgniter\Model->__call('get', [])
+ 4 APPPATH\Controllers\Proyectos.php(126): App\Models\EstadoTarea->todosLosEstados()
+ 5 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Proyectos->visualizarProyecto('6')
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proyectos))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-07 13:25:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 13:25:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 13:25:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 13:26:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 13:26:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 13:26:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-04-07 13:26:19 --> mysqli_sql_exception: Table 'proyectos.estadotareas' doesn't exist in C:\xampp\htdocs\proyectos\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\proyectos\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\proyectos\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\proyectos\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\proyectos\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\proyectos\system\Model.php(871): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\proyectos\app\Models\EstadoTarea.php(51): CodeIgniter\Model->__call('get', Array)
+#6 C:\xampp\htdocs\proyectos\app\Controllers\Proyectos.php(126): App\Models\EstadoTarea->todosLosEstados()
+#7 C:\xampp\htdocs\proyectos\system\CodeIgniter.php(942): App\Controllers\Proyectos->visualizarProyecto('6')
+#8 C:\xampp\htdocs\proyectos\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proyectos))
+#9 C:\xampp\htdocs\proyectos\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\proyectos\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2024-04-07 13:26:19 --> Table 'proyectos.estadotareas' doesn't exist
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `estadotareas`', [], false)
+ 2 SYSTEMPATH\Model.php(871): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Models\EstadoTarea.php(51): CodeIgniter\Model->__call('get', [])
+ 4 APPPATH\Controllers\Proyectos.php(126): App\Models\EstadoTarea->todosLosEstados()
+ 5 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Proyectos->visualizarProyecto('6')
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proyectos))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-07 13:26:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 13:27:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 13:28:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 13:28:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 13:28:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 13:28:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 13:29:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-07 13:29:41 --> Object of class stdClass could not be converted to string
+in SYSTEMPATH\Helpers\form_helper.php on line 333.
+ 1 APPPATH\Views\vistas\vista_proyecto_view.php(102): form_dropdown('manuel', [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\proyectos\\app\\Views\\vistas\\vista_proyecto_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('vistas/vista_proyecto_view', [], true)
+ 5 APPPATH\Controllers\Proyectos.php(134): view('vistas/vista_proyecto_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Proyectos->visualizarProyecto('6')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proyectos))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-07 13:30:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-07 13:30:31 --> Call to undefined method CodeIgniter\Database\MySQLi\Connection::select()
+in APPPATH\Models\EstadoTarea.php on line 51.
+ 1 APPPATH\Controllers\Proyectos.php(126): App\Models\EstadoTarea->todosLosEstados()
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Proyectos->visualizarProyecto('6')
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proyectos))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-07 13:30:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-07 13:30:32 --> Call to undefined method CodeIgniter\Database\MySQLi\Connection::select()
+in APPPATH\Models\EstadoTarea.php on line 51.
+ 1 APPPATH\Controllers\Proyectos.php(126): App\Models\EstadoTarea->todosLosEstados()
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Proyectos->visualizarProyecto('6')
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proyectos))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-07 13:30:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-07 13:30:34 --> Call to undefined method CodeIgniter\Database\MySQLi\Connection::select()
+in APPPATH\Models\EstadoTarea.php on line 51.
+ 1 APPPATH\Controllers\Proyectos.php(126): App\Models\EstadoTarea->todosLosEstados()
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Proyectos->visualizarProyecto('6')
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proyectos))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-07 13:31:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 13:32:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 13:34:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-07 13:34:03 --> Object of class stdClass could not be converted to string
+in SYSTEMPATH\Helpers\form_helper.php on line 333.
+ 1 APPPATH\Views\vistas\vista_proyecto_view.php(105): form_dropdown('manuel', [...])
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\proyectos\\app\\Views\\vistas\\vista_proyecto_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('vistas/vista_proyecto_view', [], true)
+ 5 APPPATH\Controllers\Proyectos.php(134): view('vistas/vista_proyecto_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Proyectos->visualizarProyecto('6')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proyectos))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-07 13:34:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 13:35:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 13:36:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 13:36:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 13:37:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 13:37:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 13:38:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 13:38:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 13:39:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-07 14:05:06 --> Call to undefined function get()
+in APPPATH\Config\Routes.php on line 30.
+ 1 SYSTEMPATH\Router\RouteCollection.php(777): CodeIgniter\Router\RouteCollection->{closure}(Object(CodeIgniter\Router\RouteCollection))
+ 2 APPPATH\Config\Routes.php(29): CodeIgniter\Router\RouteCollection->group('/tarea/', Object(Closure))
+ 3 SYSTEMPATH\Router\RouteCollection.php(344): require('C:\\xampp\\htdocs\\proyectos\\app\\Config\\Routes.php')
+ 4 SYSTEMPATH\CodeIgniter.php(810): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 5 SYSTEMPATH\CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-07 14:07:30 --> Call to undefined function get()
+in APPPATH\Config\Routes.php on line 30.
+ 1 SYSTEMPATH\Router\RouteCollection.php(777): CodeIgniter\Router\RouteCollection->{closure}(Object(CodeIgniter\Router\RouteCollection))
+ 2 APPPATH\Config\Routes.php(29): CodeIgniter\Router\RouteCollection->group('/tarea/', Object(Closure))
+ 3 SYSTEMPATH\Router\RouteCollection.php(344): require('C:\\xampp\\htdocs\\proyectos\\app\\Config\\Routes.php')
+ 4 SYSTEMPATH\CodeIgniter.php(810): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 5 SYSTEMPATH\CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-07 14:07:32 --> Call to undefined function get()
+in APPPATH\Config\Routes.php on line 30.
+ 1 SYSTEMPATH\Router\RouteCollection.php(777): CodeIgniter\Router\RouteCollection->{closure}(Object(CodeIgniter\Router\RouteCollection))
+ 2 APPPATH\Config\Routes.php(29): CodeIgniter\Router\RouteCollection->group('/tarea/', Object(Closure))
+ 3 SYSTEMPATH\Router\RouteCollection.php(344): require('C:\\xampp\\htdocs\\proyectos\\app\\Config\\Routes.php')
+ 4 SYSTEMPATH\CodeIgniter.php(810): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 5 SYSTEMPATH\CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-07 14:07:34 --> Call to undefined function get()
+in APPPATH\Config\Routes.php on line 30.
+ 1 SYSTEMPATH\Router\RouteCollection.php(777): CodeIgniter\Router\RouteCollection->{closure}(Object(CodeIgniter\Router\RouteCollection))
+ 2 APPPATH\Config\Routes.php(29): CodeIgniter\Router\RouteCollection->group('/tarea/', Object(Closure))
+ 3 SYSTEMPATH\Router\RouteCollection.php(344): require('C:\\xampp\\htdocs\\proyectos\\app\\Config\\Routes.php')
+ 4 SYSTEMPATH\CodeIgniter.php(810): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 5 SYSTEMPATH\CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-07 14:07:35 --> Call to undefined function get()
+in APPPATH\Config\Routes.php on line 30.
+ 1 SYSTEMPATH\Router\RouteCollection.php(777): CodeIgniter\Router\RouteCollection->{closure}(Object(CodeIgniter\Router\RouteCollection))
+ 2 APPPATH\Config\Routes.php(29): CodeIgniter\Router\RouteCollection->group('/tarea/', Object(Closure))
+ 3 SYSTEMPATH\Router\RouteCollection.php(344): require('C:\\xampp\\htdocs\\proyectos\\app\\Config\\Routes.php')
+ 4 SYSTEMPATH\CodeIgniter.php(810): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 5 SYSTEMPATH\CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-04-07 14:07:43 --> Call to undefined function get()
+in APPPATH\Config\Routes.php on line 30.
+ 1 SYSTEMPATH\Router\RouteCollection.php(777): CodeIgniter\Router\RouteCollection->{closure}(Object(CodeIgniter\Router\RouteCollection))
+ 2 APPPATH\Config\Routes.php(29): CodeIgniter\Router\RouteCollection->group('/tarea/', Object(Closure))
+ 3 SYSTEMPATH\Router\RouteCollection.php(344): require('C:\\xampp\\htdocs\\proyectos\\app\\Config\\Routes.php')
+ 4 SYSTEMPATH\CodeIgniter.php(810): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 5 SYSTEMPATH\CodeIgniter.php(450): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-07 14:07:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 14:07:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 14:07:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 14:07:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 14:08:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-07 14:08:37 --> Class "App\Controllers\DateTime" not found
+in APPPATH\Controllers\Proyectos.php on line 162.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Proyectos->agregarTarea('6')
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proyectos))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-07 14:13:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-07 14:14:00 --> Undefined property: App\Controllers\Proyectos::$session
+in APPPATH\Controllers\Proyectos.php on line 163.
+ 1 APPPATH\Controllers\Proyectos.php(163): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Proyectos::$session', 'C:\\xampp\\htdocs\\proyectos\\app\\Controllers\\Proyectos.php', 163)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Proyectos->agregarTarea('6')
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proyectos))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-07 14:16:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 14:16:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-07 14:16:08 --> Access level to App\Models\Tarea::$db must be protected (as in class CodeIgniter\BaseModel) or weaker
+in APPPATH\Models\Tarea.php on line 9.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+INFO - 2024-04-07 14:16:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 14:16:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-07 14:16:37 --> Call to undefined function App\Controllers\redirec()
+in APPPATH\Controllers\Proyectos.php on line 186.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Proyectos->agregarTarea('6')
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proyectos))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-07 14:16:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 14:17:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 14:25:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-07 14:25:39 --> Undefined variable $tarea
+in APPPATH\Views\vistas\vista_proyecto_view.php on line 77.
+ 1 APPPATH\Views\vistas\vista_proyecto_view.php(77): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $tarea', 'C:\\xampp\\htdocs\\proyectos\\app\\Views\\vistas\\vista_proyecto_view.php', 77)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\proyectos\\app\\Views\\vistas\\vista_proyecto_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('vistas/vista_proyecto_view', [], true)
+ 5 APPPATH\Controllers\Proyectos.php(145): view('vistas/vista_proyecto_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Proyectos->visualizarProyecto('6')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proyectos))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-07 14:25:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-07 14:25:58 --> Unsupported operand types: string + int
+in APPPATH\Views\vistas\vista_proyecto_view.php on line 79.
+ 1 SYSTEMPATH\View\View.php(228): include()
+ 2 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('vistas/vista_proyecto_view', [], true)
+ 4 APPPATH\Controllers\Proyectos.php(145): view('vistas/vista_proyecto_view', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Proyectos->visualizarProyecto('6')
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proyectos))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-07 14:26:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-07 14:26:23 --> Undefined property: mysqli::$nombre
+in APPPATH\Views\vistas\vista_proyecto_view.php on line 80.
+ 1 APPPATH\Views\vistas\vista_proyecto_view.php(80): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: mysqli::$nombre', 'C:\\xampp\\htdocs\\proyectos\\app\\Views\\vistas\\vista_proyecto_view.php', 80)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\proyectos\\app\\Views\\vistas\\vista_proyecto_view.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('vistas/vista_proyecto_view', [], true)
+ 5 APPPATH\Controllers\Proyectos.php(145): view('vistas/vista_proyecto_view', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Proyectos->visualizarProyecto('6')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proyectos))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-07 14:26:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 14:29:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 14:30:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 14:30:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 14:30:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 14:30:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 14:30:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 14:32:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 14:32:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 14:32:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 15:37:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-07 15:37:06 --> Class "Config\EstadoTarea" not found
+in APPPATH\Models\Tarea.php on line 28.
+ 1 APPPATH\Controllers\Proyectos.php(136): App\Models\Tarea->buscarTareaPorID('6')
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Proyectos->visualizarProyecto('6')
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proyectos))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-07 15:37:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-07 15:37:44 --> Undefined variable $id_estado
+in APPPATH\Models\EstadoTarea.php on line 64.
+ 1 APPPATH\Models\EstadoTarea.php(64): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $id_estado', 'C:\\xampp\\htdocs\\proyectos\\app\\Models\\EstadoTarea.php', 64)
+ 2 APPPATH\Models\Tarea.php(29): App\Models\EstadoTarea->mostrarEstadoDelaTarea([...])
+ 3 APPPATH\Controllers\Proyectos.php(136): App\Models\Tarea->buscarTareaPorID('6')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Proyectos->visualizarProyecto('6')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proyectos))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-07 15:39:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 15:40:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 15:40:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-07 15:40:41 --> Undefined variable $id_estado
+in APPPATH\Models\EstadoTarea.php on line 64.
+ 1 APPPATH\Models\EstadoTarea.php(64): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $id_estado', 'C:\\xampp\\htdocs\\proyectos\\app\\Models\\EstadoTarea.php', 64)
+ 2 APPPATH\Models\Tarea.php(29): App\Models\EstadoTarea->mostrarEstadoDelaTarea([...])
+ 3 APPPATH\Controllers\Proyectos.php(136): App\Models\Tarea->buscarTareaPorID('6')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Proyectos->visualizarProyecto('6')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proyectos))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-07 15:40:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 15:41:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 15:43:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-07 15:43:32 --> Cannot use object of type stdClass as array
+in APPPATH\Models\EstadoTarea.php on line 65.
+ 1 APPPATH\Models\Tarea.php(29): App\Models\EstadoTarea->mostrarEstadoDelaTarea([...])
+ 2 APPPATH\Controllers\Proyectos.php(136): App\Models\Tarea->buscarTareaPorID('6')
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Proyectos->visualizarProyecto('6')
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proyectos))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-07 15:43:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 15:45:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 15:46:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-07 15:46:00 --> array_push() does not accept unknown named parameters
+in APPPATH\Models\EstadoTarea.php on line 66.
+ 1 APPPATH\Models\EstadoTarea.php(66): array_push([...], 'Pendiente')
+ 2 APPPATH\Models\Tarea.php(29): App\Models\EstadoTarea->mostrarEstadoDelaTarea([...])
+ 3 APPPATH\Controllers\Proyectos.php(136): App\Models\Tarea->buscarTareaPorID('6')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Proyectos->visualizarProyecto('6')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proyectos))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-07 15:46:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 15:47:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 15:50:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 15:50:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 15:50:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 15:51:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 15:51:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 15:51:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 15:52:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 15:53:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 15:53:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 15:53:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 15:55:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 15:55:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 15:55:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 15:55:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 15:55:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 15:55:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 15:56:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 15:56:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 15:56:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 15:56:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 15:59:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:00:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:00:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:00:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-07 16:00:17 --> Undefined variable $datos
+in APPPATH\Models\EstadoTarea.php on line 70.
+ 1 APPPATH\Models\EstadoTarea.php(70): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $datos', 'C:\\xampp\\htdocs\\proyectos\\app\\Models\\EstadoTarea.php', 70)
+ 2 APPPATH\Models\Tarea.php(29): App\Models\EstadoTarea->mostrarEstadoDelaTarea([])
+ 3 APPPATH\Controllers\Proyectos.php(136): App\Models\Tarea->buscarTareaPorID('7')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Proyectos->visualizarProyecto('7')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proyectos))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-07 16:01:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-07 16:01:15 --> syntax error, unexpected token ";", expecting "]"
+in APPPATH\Models\Tarea.php on line 32.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(291): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\proyectos\\app\\Models\\Tarea.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(269): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\Tarea')
+ 3 APPPATH\Controllers\Proyectos.php(135): CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\Tarea')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Proyectos->visualizarProyecto('7')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proyectos))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-07 16:01:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-04-07 16:01:41 --> syntax error, unexpected token "}"
+in APPPATH\Models\Tarea.php on line 33.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(291): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\proyectos\\app\\Models\\Tarea.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(269): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Models\\Tarea')
+ 3 APPPATH\Controllers\Proyectos.php(135): CodeIgniter\Autoloader\Autoloader->loadClass('App\\Models\\Tarea')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Proyectos->visualizarProyecto('7')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Proyectos))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2024-04-07 16:01:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:02:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:02:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:02:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:02:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:02:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:03:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:03:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:03:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:03:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:03:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:03:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:03:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:03:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:04:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:04:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:04:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:04:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:04:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:04:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:05:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:05:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:05:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:06:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:06:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:06:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:07:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:07:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:07:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:07:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:08:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:08:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:08:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:08:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:08:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:08:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:08:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:08:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:08:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:10:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:10:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:11:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:11:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:12:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:12:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:12:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:12:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:13:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:13:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:14:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:14:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:15:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:15:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:16:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:16:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-04-07 16:16:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
