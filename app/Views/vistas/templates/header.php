@@ -47,7 +47,7 @@
                             name=""
                             id=""
                             class="btn btn-primary w-100"
-                            href="#"
+                            href="<?=base_url('/tarea/')?>"
                             role="button"
                             >Tareas</a
                         >
@@ -58,7 +58,7 @@
                             name=""
                             id=""
                             class="btn btn-primary w-100"
-                            href="#"
+                            href="<?=base_url('/usuario/')?>"
                             role="button"
                             >Usuarios</a
                         >

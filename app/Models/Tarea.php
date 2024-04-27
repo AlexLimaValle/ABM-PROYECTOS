@@ -5,6 +5,7 @@ namespace App\Models;
 use CodeIgniter\Model;
 use Config\Database;
 use App\Models\EstadoTarea;
+use App\Models\Proyecto;
 
 class Tarea extends Model{
     protected $table = 'tarea';
@@ -23,11 +24,48 @@ class Tarea extends Model{
 
     public function buscarTareaPorID($idProyecto){
         $tabla = $this->db->table('tarea');
-        $tabla->where('id_proyecto',$idProyecto);
+        $condicion = [
+            'id_proyecto'=>$idProyecto,
+            'borrado_logico'=>'0'
+        ];
+        $tabla->where($condicion);
         $resultados = $tabla->get()->getResult();
         $estadoDeTarea = new EstadoTarea();
         $arregloDefinitivo = ($resultados)?$estadoDeTarea->mostrarEstadoDelaTarea($resultados):[];
         return $arregloDefinitivo;
+    }
+
+
+    public function mostrarTareas():array{
+        $tabla = $this->db->table('tarea');
+        $tabla->select('tarea.id_tarea AS idTarea,proyecto.nombre AS nombreProyecto,tarea.nombre AS tareaNombre,proyecto.fecha_inicio,proyecto.fecha_fin,estado_proyecto.nombre AS estadoProyecto,estado_tarea.nombre AS estadoTarea');
+        $tabla->join('proyecto','proyecto.id_proyecto=tarea.id_proyecto');
+        $tabla->join('estado_proyecto','estado_proyecto.id_estado = proyecto.estado');
+        $tabla->join('estado_tarea','estado_tarea.id_estado=tarea.id_estado');
+        $tabla->where('tarea.borrado_logico !=','1');    
+        $tabla->orderBy('proyecto.nombre','ASC');
+        $resultado = $tabla->get();
+        return $resultado->getResult();
+    }
+
+    public function mostrarTareasParticular($nombre):array{
+        $tabla = $this->db->table('tarea');
+        $tabla->select('tarea.id_tarea AS idTarea,proyecto.nombre AS nombreProyecto,tarea.nombre AS tareaNombre,proyecto.fecha_inicio,proyecto.fecha_fin,estado_proyecto.nombre AS estadoProyecto,estado_tarea.nombre AS estadoTarea');
+        $tabla->join('proyecto','proyecto.id_proyecto=tarea.id_proyecto');
+        $tabla->join('estado_proyecto','estado_proyecto.id_estado = proyecto.estado');
+        $tabla->join('estado_tarea','estado_tarea.id_estado=tarea.id_estado');
+        $tabla->where('tarea.borrado_logico !=','1'); 
+        $tabla->like('tarea.nombre',$nombre);   
+        $tabla->orderBy('proyecto.nombre','ASC');
+        $resultado = $tabla->get();
+        return $resultado->getResult();
+    }
+
+    public function borradoTarea($id){
+        $tabla = $this->db->table('tarea');
+        $tabla->set('borrado_logico','1');
+        $tabla->where('id_tarea',$id);
+        $tabla->update();
     }
 
 }

@@ -59,7 +59,7 @@
                             role="button"
                             data-bs-toggle="modal" 
                             data-bs-target="#staticBackdrop"
-                            >+ Nueva tarea</a
+                            >+ Nuevo</a
                         >
                         
                     </div>
@@ -80,7 +80,18 @@
                                     <td><?=$items['nombre']?></td>
                                     <td><?=$items['descripcion']?></td>
                                     <td><?=$items['nombreEstado']?></td>
-                                    <td>23</td>
+                                    <td>
+                                        <div class="dropdown">
+                                            <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Acciones
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
                                 </tr>
                             <?php endforeach;?>
                         </tbody>   

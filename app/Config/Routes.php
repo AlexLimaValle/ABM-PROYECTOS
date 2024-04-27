@@ -26,11 +26,19 @@ $routes->get('/eliminarProyecto/(:num)', 'Proyectos::eliminarProyecto/$1');
 
 
 //tarea 
-$routes->group('/tarea/',function($routes){   
+$routes->group('tarea',function($routes){   
+    $routes->get('','Tarea::index');
     $routes->get('agregar/(:num)','Proyectos::agregarTarea/$1');
+    $routes->get('borrar/(:num)','Tarea::borrarTarea/$1');
+    $routes->get('buscar','Tarea::buscarTarea');
 });
 
 
+//usuario
+
+$routes->group('/usuario',function($routes){
+    $routes->get('/','Usuario::index');
+});
 
 
 

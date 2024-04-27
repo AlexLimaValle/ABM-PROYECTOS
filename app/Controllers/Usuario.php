@@ -14,7 +14,11 @@ class Usuario extends BaseController{
     }
 
     public function index():string{
-        return view('vistas/usuario');
+        $data = [
+            'header'=>view('vistas/templates/header'),
+            'footer'=>view('vistas/templates/footer')
+        ];
+        return view('vistas/usuario_view',$data);
     }
 
 }
