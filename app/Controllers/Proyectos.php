@@ -64,6 +64,7 @@
             }
             return $datosDefinitivos;
         }
+        
 
         public function agregarNuevoProyecto(){
             $estados = new Estados();
@@ -188,4 +189,6 @@
             $tarea->agregarTarea($nuevaTarea);
             return redirect()->to(base_url('/verProyecto/'.$id));
         }
+
+        
     }   

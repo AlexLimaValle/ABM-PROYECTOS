@@ -38,7 +38,7 @@
                             class="btn btn-primary w-100"
                             href="<?=base_url("/proyectos")?>"
                             role="button"
-                            >Proyectos</a
+                            ><i class="fa-solid fa-folder pe-2"></i>Proyectos</a
                         >
                         
                     </li>
@@ -49,7 +49,7 @@
                             class="btn btn-primary w-100"
                             href="<?=base_url('/tarea/')?>"
                             role="button"
-                            >Tareas</a
+                            ><i class="fa-solid fa-check-double pe-2"></i>Tareas</a
                         >
                         
                     </li>
@@ -60,7 +60,7 @@
                             class="btn btn-primary w-100"
                             href="<?=base_url('/usuario/')?>"
                             role="button"
-                            >Usuarios</a
+                            ><i class="fa-solid fa-users pe-2"></i>Usuarios</a
                         >
                         
                     </li>
@@ -71,7 +71,7 @@
                             class="btn btn-primary w-100"
                             href="<?=base_url('/personal')?>"
                             role="button"
-                            >Personal</a
+                            ><i class="fa-solid fa-person pe-2"></i>Personal</a
                         >
                     </li>
                 </ul>

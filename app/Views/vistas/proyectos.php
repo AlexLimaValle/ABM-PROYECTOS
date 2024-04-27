@@ -1,6 +1,6 @@
 <?=$header?>
     <div class="row justify-content-center">
-        <div class="col-12">
+        <div class="col-11">
             <h2>Lista de proyectos</h2>
         </div>
         <div class="col-12">
@@ -12,7 +12,7 @@
                         class="btn btn-primary"
                         href="<?=base_url("/crearProyecto")?>"
                         role="button"
-                        >Crear Proyecto</a
+                        >+ Crear Proyecto</a
                     >
                 </div>
             </div>

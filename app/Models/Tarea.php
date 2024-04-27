@@ -68,4 +68,12 @@ class Tarea extends Model{
         $tabla->update();
     }
 
+    public function cantidadDeTareas(){
+        $tabla = $this->db->table("tarea");
+        $tabla->selectCount('tarea.id_tarea');
+        $tabla->where('borrado_logico','0');
+        $resultado = $tabla->get();
+        return $resultado->getRow();
+    }
+
 }

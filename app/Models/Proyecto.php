@@ -21,6 +21,8 @@ class Proyecto extends Model{
 
     public function proyectoId($id){
         $tabla = $this->db->table('proyecto');
+        $tabla->select('proyecto.*,estado_proyecto.nombre AS estadoProyecto');
+        $tabla->join('estado_proyecto','estado_proyecto.id_estado=proyecto.estado');
         $tabla->where('id_proyecto',$id);
         $resultado = $tabla->get();
         return $resultado->getRow();
@@ -71,5 +73,15 @@ class Proyecto extends Model{
         $tabla->where("id_proyecto",$id);
         $tabla->update();
     }
+
+    public function cantidadDeProyectos(){
+        $tabla = $this->db->table('proyecto');
+        $tabla->selectCount('proyecto.id_proyecto');
+        $tabla->where('borrado_logico','0');
+        $resultado = $tabla->get();
+        return $resultado->getRow();
+    }
+
+    
     
 }

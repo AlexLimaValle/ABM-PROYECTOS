@@ -3,6 +3,9 @@
 namespace App\Controllers;
 use Config\Services;
 use App\Models\Usuario;
+use App\Models\Proyecto;
+use App\Models\Tarea;
+use App\Controllers\Proyectos;
 
 class Home extends BaseController
 {
@@ -17,7 +20,16 @@ class Home extends BaseController
     {
         $sessionIniciada = $this->session->get('usuario');
         if($sessionIniciada){
-            $templates = ['header'=>view('vistas/templates/header'),'footer'=>view('vistas/templates/footer')];
+            $proyecto = new Proyecto();
+            $tarea = new Tarea();
+            $dataProyecto = new Proyectos();
+            $templates = [
+            'header'=>view('vistas/templates/header'),
+            'footer'=>view('vistas/templates/footer'),
+            'cantProyecto'=>$proyecto->cantidadDeProyectos(),
+            'cantTarea'=>$tarea->cantidadDeTareas(),
+            'datosDeProyecto'=>$dataProyecto->proyectosConEstados()
+            ];
             return view('vistas/inicio',$templates);
         }else{
             return view('login');
@@ -39,7 +51,6 @@ class Home extends BaseController
         }
         
     }
-
 
     public function cerrarSession(){
         $this->session->destroy();

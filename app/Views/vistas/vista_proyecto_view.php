@@ -26,7 +26,7 @@
                         </div>
                         <div class="col-12">
                             <h6 class="fw-bolt border-bottom border-primary">Estado</h6>
-                            <p class="text-secondary"><?=$proyecto->estado?></p>
+                            <p class="badge text-bg-dark"><?=strtoupper($proyecto->estadoProyecto)?></p>
                         </div>
                     </div>
                 </div>
@@ -79,16 +79,15 @@
                                     <td><?=$key?></td>
                                     <td><?=$items['nombre']?></td>
                                     <td><?=$items['descripcion']?></td>
-                                    <td><?=$items['nombreEstado']?></td>
+                                    <td><p class="badge text-bg-secondary"><?=$items['nombreEstado']?></p></td>
                                     <td>
                                         <div class="dropdown">
                                             <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                             Acciones
                                             </button>
                                             <ul class="dropdown-menu">
-                                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                                <li><a class="dropdown-item" href="<?=base_url('tarea/borrar/').$items['id_tarea']?>">Borrar</a></li>
+                                                <li><a class="dropdown-item" href="#">Editar</a></li>
                                             </ul>
                                         </div>
                                     </td>
