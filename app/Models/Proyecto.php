@@ -82,6 +82,15 @@ class Proyecto extends Model{
         return $resultado->getRow();
     }
 
+    public function ajaxProyectos(string $valor){
+        $tabla = $this->db->table("proyecto");
+        $tabla->select("proyecto.id_proyecto AS proyectoId,proyecto.nombre AS nombreProyecto,proyecto.fecha_inicio AS fechaInicio,proyecto.fecha_fin AS fechaFin,estado_proyecto.nombre AS nombreEstado");
+        $tabla->join("estado_proyecto","estado_proyecto.id_estado = proyecto.estado");
+        $tabla->where("proyecto.borrado_logico","0");
+        $tabla->like("proyecto.nombre",$valor,"both");
+        $resultado = $tabla->get();
+        return $resultado->getResult();
+    }
     
     
 }

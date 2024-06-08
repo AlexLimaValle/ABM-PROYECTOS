@@ -13,7 +13,7 @@
                 </div>
                 <div class="col-2">
                     <button id="busquedaTareas" class="btn btn-primary"><i class="fa-solid fa-magnifying-glass"></i></button>
-                    <button class="btn btn-primary"><i class="fa-solid fa-arrow-rotate-left"></i></button>
+                    <button id="borrarTodo" class="btn btn-primary"><i class="fa-solid fa-arrow-rotate-left"></i></button>
                 </div>
             </div>
         </div>
@@ -31,7 +31,7 @@
                         <th>Accion</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="tareaContenido">
                     <?php foreach($data as $key=>$items):?>
                         <tr>
                             <td><?=$key+1?></td>
@@ -66,7 +66,7 @@
                                     <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Acciones</button>
                                     <ul class="dropdown-menu">
                                         <li><a class="dropdown-item" href="<?=base_url('/tarea/borrar/').$items->idTarea?>">Borrar</a></li>
-                                        <li><a class="dropdown-item" href="#">Actualizar</a></li>
+                                        <li><a class="dropdown-item" href="<?=base_url("tarea/actualizar/").$items->idTarea?>">Actualizar</a></li>
                                     </ul>
                                 </div>
                             </td>

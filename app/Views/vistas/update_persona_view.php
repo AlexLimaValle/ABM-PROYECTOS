@@ -21,7 +21,7 @@
             <div class="col-3">
                 <label for="imagenes" class="form-label">Imagen:</label>
                 <img src="data:image/*;base64,<?=$persona["imagen"]?>" style="height:20px;width:20px;" class="rounded" alt="icono">
-                <input type="file" class="form-control" name="imagen" id="imagenes">
+                <input type="file" class="form-control" value="<?=$persona["imagen"]?>" name="imagen" id="imagenes">
             </div>
             <div class="col-3">
                 <label for="roles" class="form-label">Rol:</label>

@@ -20,6 +20,8 @@
             return view('vistas/personal',$templates);
         }
 
+        
+
        public function agregarPersonal(){
             $roles = new Rol();
             $rol = $roles->todosLosRoles();
@@ -63,15 +65,24 @@
        }
 
        public function actualizacionDePersonal(){
-            $id = $this->request->getGet('id');
-            $nombre = $this->request->getGet('nombre');
-            $apellido = $this->request->getGet('apellido');
-            $fecha = $this->request->getGet('fecha');
-            $email = $this->request->getGet('email');
-            $rol = $this->request->getGet('rol');
+            $id = $this->request->getPost('id');
+            $nombre = $this->request->getPost('nombre');
+            $apellido = $this->request->getPost('apellido');
+            $fecha = $this->request->getPost('fecha');
+            $email = $this->request->getPost('email');
+            $rol = $this->request->getPost('rol');
+            $imagen = $this->request->getFile('imagen');
+            $imagenSubir = null;
+            if($imagen->isValid() && !$imagen->hasMoved()){
+               $contenido = file_get_contents($imagen->getTempName());
+               $base64 = base64_encode($contenido);
+               $imagenSubir = $base64;
+            }else{
+               $imagenSubir = $imagen;
+            }
             $observacion = $this->request->getGet('observaciones');
             $personaModel = new Persona();
-            $personaModel->actualizarDatosDePersonal($id,$nombre,$apellido,$fecha,$email,$rol,$observacion);
+            $personaModel->actualizarDatosDePersonal($id,$nombre,$apellido,$fecha,$email,$rol,$observacion,$imagenSubir);
        }
 
 
@@ -126,5 +137,12 @@
                EOD;
           }
           return $templateHtml;
+       }
+
+       public function personalResultado(){
+          $idPersonal = $this->request->getGet("buscador");
+          $persona = new Persona();
+          $resultadosPersonal = $persona->personaEspecifica($idPersonal);
+          return json_encode($resultadosPersonal);
        }
     }

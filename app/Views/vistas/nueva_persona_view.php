@@ -1,6 +1,6 @@
 <?=$header?>
     <div class="col-12">
-        <form method="POST" enctype="multipart/form-data" action="<?=base_url("/guardarPersonal")?>" class="row justify-content-center">
+        <form method="POST" enctype="multipart/form-data" action="<?=base_url("personal/guardarPersonal")?>" class="row justify-content-center">
             <div class="col-3">
                 <label for="name" class="form-label">Nombre:</label>
                 <input type="text" placeholder="Nombre" name="nombre" id="name" class="form-control">
@@ -43,5 +43,4 @@
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script src="<?= base_url('javascript/guardarPersona.js') ?>"></script>
 <?=$footer?>

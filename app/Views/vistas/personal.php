@@ -9,7 +9,7 @@
                     name=""
                     id=""
                     class="btn btn-primary"
-                    href="<?=base_url('/editarPersonal');?>"
+                    href="<?=base_url('personal/editarPersonal');?>"
                     role="button"
                     >Nuevo Usuario</a
                 >
@@ -47,19 +47,12 @@
                                     <td><?=$personal['correo']?></td>
                                     <td><?=$personal['rol']?></td>
                                     <td>
-                                        <a
-                                            name=""
-                                            id=""
-                                            class="btn btn-primary"
-                                            href="#"
-                                            role="button"
-                                            >Ver</a
-                                        >
+                                        <button class="btn btn-primary" id="personal-<?=$personal["id"]?>" type="button" data-bs-toggle="modal" data-bs-target="#visualizar">Ver</button>
                                         <a
                                             name=""
                                             id=""
                                             class="btn btn-success"
-                                            href="<?=base_url().'/actulizarPersonal/'.$personal["id"]?>"
+                                            href="<?=base_url('personal/actulizarPersonal/').$personal["id"]?>"
                                             role="button"
                                             >Actualizar</a
                                         >
@@ -67,7 +60,7 @@
                                             name=""
                                             id=""
                                             class="btn btn-danger"
-                                            href="<?=base_url()?>eliminarPersonal?id=<?=$personal['id']?>"
+                                            href="<?=base_url('personal/eliminarPersonal')?>?id=<?=$personal['id']?>"
                                             role="button"
                                             >Eliminar</a
                                         >
@@ -77,6 +70,22 @@
                         <?php endforeach;?>
                     </tbody>
                 </table>
+        </div>
+        <div class="modal fade" id="visualizar" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="manuel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-scrollable">
+                <div class="modal-content" id="contenido">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="tituloPersona"></h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Salir</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

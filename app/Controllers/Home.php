@@ -40,11 +40,19 @@ class Home extends BaseController
         $usuario = $this->request->getPost('username');
         $contrasenia = $this->request->getPost('password');
         $usuarios = new Usuario();
+        $proyecto = new Proyecto();
+        $tarea = new Tarea();
+        $dataProyecto = new Proyectos();
         $informacionUsuario = $usuarios->buscarNombreDeusuario($usuario,$contrasenia); 
         if($informacionUsuario){
             $informacionDeSession = array('id'=>$informacionUsuario->id_usuario,'usuario'=>$informacionUsuario->username);
             $this->session->set($informacionDeSession);
-            $templates = ['header'=>view('vistas/templates/header'),'footer'=>view('vistas/templates/footer')];
+            $templates = ['header'=>view('vistas/templates/header'),
+            'footer'=>view('vistas/templates/footer'),
+            'cantProyecto'=>$proyecto->cantidadDeProyectos(),
+            'cantTarea'=>$tarea->cantidadDeTareas(),
+            'datosDeProyecto'=>$dataProyecto->proyectosConEstados()
+        ];
             return view('vistas/inicio',$templates);
         }else{
             return view('login');

@@ -87,7 +87,7 @@
                                             </button>
                                             <ul class="dropdown-menu">
                                                 <li><a class="dropdown-item" href="<?=base_url('tarea/borrar/').$items['id_tarea']?>">Borrar</a></li>
-                                                <li><a class="dropdown-item" href="#">Editar</a></li>
+                                                <li><a class="dropdown-item" href="<?=base_url('tarea/actualizar').'/'.$items['id_tarea']?>">Editar</a></li>
                                             </ul>
                                         </div>
                                     </td>

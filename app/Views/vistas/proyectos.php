@@ -17,13 +17,13 @@
                 </div>
             </div>
         </div>
-        <div class="col-11 border-top border-3 border-primary p-2">
+        <div class="col-12 border-top border-3 border-primary p-2">
             <div class="row justify-content-end">
-                <div class="col-1 text-center">
-                    <label class="form-label" for="">Search: </label>
-                </div>
-                <div class="col-4">
-                    <input type="text" class="form-control">
+                <div class="col-3">
+                    <div class="input-group">
+                        <span class="input-group-text">Buscar</span>
+                        <input type="text" id="buscador" name="buscar" placeholder="Buscar" class="form-control">
+                    </div>
                 </div>
             </div>
         </div>
@@ -39,7 +39,7 @@
                         <th>Acciones</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="table_body">
                     <?php foreach($datos as $key=>$items):?>
                         <tr>
                             <td><?=$key+1?></td>
@@ -75,4 +75,7 @@
             </table>
         </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="<?=base_url().'javascript/proyectos.js'?>"></script>
 <?=$footer?>

@@ -34,4 +34,12 @@ class Usuario extends Model{
         $desencriptar = password_verify($password,$resultado->password);
         return $desencriptar;
     }
+
+    public function findAllUsers(){
+        $tabla = $this->db->table('usuario');
+        $tabla->where("borrado_logico","0");
+        $resultados = $tabla->get();
+        return $resultados->getResult();
+    }
+
 }

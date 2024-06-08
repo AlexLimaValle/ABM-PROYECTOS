@@ -9,11 +9,6 @@
     use App\Models\Tarea;
     use Config\Services;
     class Proyectos extends BaseController{
-
-        /**
-         * @return mixed 
-         * 
-         */
         
         private $session;
 
@@ -188,6 +183,13 @@
             $tarea = new Tarea();
             $tarea->agregarTarea($nuevaTarea);
             return redirect()->to(base_url('/verProyecto/'.$id));
+        }
+
+        public function buscarTodoProyecto(){
+            $envio = $this->request->getGet("valor");
+            $proyectos = new Proyecto();
+            $jsonData = $proyectos->ajaxProyectos($envio);
+            return json_encode($jsonData);
         }
 
         
