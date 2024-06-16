@@ -3,7 +3,7 @@
         <div class="col-11 border-bottom border-3 border-primary">
             <h2>Nuevo Proyecto</h2>
         </div>
-        <form class="col-11 card mt-3" method="post" action="<?=base_url('/guardarProyecto')?>">
+        <form class="col-11 card mt-3" method="post" action="<?=base_url('proyectos/guardarProyecto')?>">
             <div class="row">
                 <div class="col-6">
                     <label for="" class="form-label"><span class="fw-bold">Nombre</span></label>

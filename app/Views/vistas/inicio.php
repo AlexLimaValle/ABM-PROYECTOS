@@ -2,44 +2,44 @@
         <div class="col-12" style="height:70%">
             <div class="row justify-content-evenly mt-5" style="height:60vh">
                 <div class="col-8" style="height:100%">
-                    <div class="row card">
-                        <h6 class="fw-bold p-3">Progreso del Proyecto</h6>
-                        <hr>
-                        <table class="table col-12">
-                            <thead>
-                                <tr>
-                                    <th>N°</th>
-                                    <th>Proyecto</th>
-                                    <th>Progreso</th>
-                                    <th>Estado</th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php foreach($datosDeProyecto as $key=>$item):?>
+                    <div class="row card overflow-auto" style="height:70vh">
+                        <div class="card-body">
+                            <table class="table col-12" >
+                                <thead>
                                     <tr>
-                                        <td><?=$key+1?></td>
-                                        <td><?=$item->nombre?></td>
-                                        <td>
-                                            <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
-                                                <div class="progress-bar" style="width: 93%"></div>
-                                            </div>
-                                            <p style="font-size:10px;" class="text-secondary mt-1">0% completado</p>
-                                        </td>
-                                        <td><p class="badge text-bg-<?=$item->color?>"><?=$item->estado?></p></td>
-                                        <td><a
-                                            name=""
-                                            id=""
-                                            class="btn btn-primary"
-                                            href="<?=base_url('/verProyecto/').$item->id_proyecto?>"
-                                            role="button"
-                                            ><i class="fa-solid fa-folder pe-2"></i>Ver</a
-                                        >
-                                        </td>
+                                        <th>N°</th>
+                                        <th>Proyecto</th>
+                                        <th>Progreso</th>
+                                        <th>Estado</th>
+                                        <th></th>
                                     </tr>
-                                <?php endforeach;?>
-                            </tbody>
-                        </table>
+                                </thead>
+                                <tbody>
+                                    <?php foreach($datosDeProyecto as $key=>$item):?>
+                                        <tr>
+                                            <td><?=$key+1?></td>
+                                            <td><?=$item->nombre?></td>
+                                            <td>
+                                                <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                                                    <div class="progress-bar" style="width:<?=$item->porcentaje?>%"></div>
+                                                </div>
+                                                <p style="font-size:10px;" class="text-secondary mt-1"><?=$item->porcentaje?>% completado</p>
+                                            </td>
+                                            <td><p class="badge text-bg-<?=$item->color?>"><?=$item->estado?></p></td>
+                                            <td><a
+                                                name=""
+                                                id=""
+                                                class="btn btn-primary"
+                                                href="<?=base_url('proyectos/verProyecto/').$item->id_proyecto?>"
+                                                role="button"
+                                                ><i class="fa-solid fa-folder pe-2"></i>Ver</a
+                                            >
+                                            </td>
+                                        </tr>
+                                    <?php endforeach;?>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
                 <div class="col-3" style="height:70%">

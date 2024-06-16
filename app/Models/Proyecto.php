@@ -29,9 +29,18 @@ class Proyecto extends Model{
     }
 
     public function todosLosProyectos(){
-        $datosProyectos = $this->table("proyectos");
-        $datosProyectos->where('borrado_logico',0);
-        $datos = $datosProyectos->get();
+        $query = "
+            SELECT 
+                (SELECT IF(t2.id_tarea IS NOT NULL,SUM(IF(t2.id_estado = 3,1,0))/COUNT(t2.id_tarea),0) 
+	            FROM tarea t2 
+	            WHERE t2.id_proyecto = p.id_proyecto AND t2.borrado_logico = 0) as cantidad,
+                p.*
+                FROM proyecto p 
+                LEFT JOIN tarea t ON p.id_proyecto = t.id_proyecto 
+                WHERE p.borrado_logico = 0 
+                GROUP BY p.id_proyecto 
+        ";
+        $datos = $this->db->query($query);
         return $datos->getResult();
     }
 

@@ -87,3 +87,17 @@ create table rol(
 	constraint fk_createTo foreign key (create_to) references usuario(id_usuario),
 	constraint fk_deleteTo foreign key (delete_to) references usuario(id_usuario)
 );
+
+
+
+select 
+(
+	select if(t2.id_tarea is not null,sum(if(t2.id_estado = 3,1,0))/count(t2.id_tarea),0) 
+	from tarea t2 
+	where t2.id_proyecto = p.id_proyecto and t2.borrado_logico = 0
+) as cantidad
+p.nombre as nombre
+from proyecto p 
+left join tarea t on p.id_proyecto = t.id_proyecto 
+where p.borrado_logico = 0 
+group by p.id_proyecto 

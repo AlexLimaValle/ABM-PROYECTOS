@@ -29,11 +29,13 @@
             $estadoData = $estados->todosLosEstados();
             $datosDefinitivos = [];
             foreach($proyectosData as $items){
+                $porcentaje = round($items->cantidad*100,0);
                 $datos = [
                     "id_proyecto"=>$items->id_proyecto,
                     "nombre"=>$items->nombre,
                     "fecha_fin"=>$items->fecha_fin,
                     "fecha_inicio"=>$items->fecha_inicio,
+                    "porcentaje"=>$porcentaje
                 ];
                 foreach($estadoData as $estados){
                     if($items->estado == $estados->id_estado){
@@ -182,7 +184,7 @@
             ];
             $tarea = new Tarea();
             $tarea->agregarTarea($nuevaTarea);
-            return redirect()->to(base_url('/verProyecto/'.$id));
+            return redirect()->to(base_url('proyectos/verProyecto/'.$id));
         }
 
         public function buscarTodoProyecto(){

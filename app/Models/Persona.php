@@ -24,6 +24,13 @@ class Persona extends Model{
         return $resultado->getResult();
     }
 
+    public function findAllPersona(){
+        $tabla = $this->db->table("personas");
+        $tabla->where("borrado_logico","0");
+        $resultados = $tabla->get();
+        return $resultados->getResult();
+    }
+
     public function personalConRoles(){
         $roles = new Rol();
         $personas = $this->todasLasPersonas();

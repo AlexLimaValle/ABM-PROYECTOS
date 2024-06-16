@@ -10,7 +10,7 @@
                         name=""
                         id=""
                         class="btn btn-primary"
-                        href="<?=base_url("/crearProyecto")?>"
+                        href="<?=base_url("proyectos/crearProyecto")?>"
                         role="button"
                         >+ Crear Proyecto</a
                     >
@@ -27,8 +27,8 @@
                 </div>
             </div>
         </div>
-        <div class="col-11 card">
-            <table class="table">
+        <div class="col-11 card overflow-auto" style="height:50vh;">
+            <table class="table table-striped table-hover">
                 <thead>
                     <tr>
                         <th>N°</th>
@@ -51,7 +51,7 @@
                                     name=""
                                     id=""
                                     class="btn btn-success"
-                                    href="<?=base_url()?>verProyecto/<?=$items->id_proyecto?>"
+                                    href="<?=base_url()?>proyectos/verProyecto/<?=$items->id_proyecto?>"
                                     role="button"
                                     >Ver</a>
                                     <a
@@ -65,7 +65,7 @@
                                     name=""
                                     id=""
                                     class="btn btn-danger"
-                                    href="<?=base_url("/eliminarProyecto").'/'.$items->id_proyecto?>"
+                                    href="<?=base_url("proyectos/eliminarProyecto").'/'.$items->id_proyecto?>"
                                     role="button"
                                     >Eliminar</a>
                             </td>

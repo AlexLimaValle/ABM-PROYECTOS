@@ -42,4 +42,9 @@ class Usuario extends Model{
         return $resultados->getResult();
     }
 
+    public function insertUser($datos){
+        $tabla = $this->db->table('usuario');
+        $tabla->insert($datos);
+    }
+
 }

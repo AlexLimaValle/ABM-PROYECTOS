@@ -22,14 +22,15 @@ $routes->group('personal',['filter'=>'auth'],static function($routes){
 });
 
 // Proyectos:
-$routes->get('/proyectos', 'Proyectos::index');
-$routes->get('/crearProyecto', 'Proyectos::agregarNuevoProyecto');
-$routes->post('/guardarProyecto', 'Proyectos::guardarProyecto');
-$routes->get('/verProyecto/(:num)', [[Proyectos::class,'visualizarProyecto'],'$1']);
-$routes->get('/eliminarProyecto/(:num)', 'Proyectos::eliminarProyecto/$1');
+
 
 $routes->group('proyectos',['filter'=>'auth'],static function($routes){
+    $routes->get('/', 'Proyectos::index');
     $routes->get('consulta','Proyectos::buscarTodoProyecto');
+    $routes->get('crearProyecto', 'Proyectos::agregarNuevoProyecto');
+    $routes->post('guardarProyecto', 'Proyectos::guardarProyecto');
+    $routes->get('verProyecto/(:num)', [[Proyectos::class,'visualizarProyecto'],'$1']);
+    $routes->get('eliminarProyecto/(:num)', 'Proyectos::eliminarProyecto/$1');
 });
 
 //tarea 
@@ -45,13 +46,17 @@ $routes->group('tarea',['filter'=>'auth'],static function($routes){
 
 //usuario
 
-$routes->group('/usuario',function($routes){
+$routes->group('/usuario',['filter'=>'auth'],function($routes){
     $routes->get('/','Usuario::index');
+    $routes->post('crear','Usuario::validarUser');
 });
 
 
 
-
+$routes->group('api',['namespace'=>'App\Controllers\API'],function($routes){
+    $routes->get('personas','Personas::index');
+    
+});
 
 
 
